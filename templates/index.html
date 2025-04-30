@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tutor Cowork</title>
+    <script src="https://cdn.socket.io/4.6.1/socket.io.min.js"></script>
+</head>
+<body>
+    <h2>English:</h2>
+    <p id="english-sentence">{{ english }}</p>
+
+    <h3>Italian Translation</h3>
+    <input type="text" id="italian-box">
+    <button onclick="showTranslation('italian')">Show Translation</button>
+    <button onclick="playAudio('italian')">Play Translation</button>
+    <button onclick="saveTranslation('italian')">Save Changes</button>
+
+    <h3>Spanish Translation</h3>
+    <input type="text" id="spanish-box">
+    <button onclick="showTranslation('spanish')">Show Translation</button>
+    <button onclick="playAudio('spanish')">Play Translation</button>
+    <button onclick="saveTranslation('spanish')">Save Changes</button>
+
+    <br><br>
+    <button onclick="nextSentence()">Next Sentence</button>
+
+    <audio id="audio-player" controls style="display:none;"></audio>
+
+    <script>
+        const socket = io();
+
+        function showTranslation(lang) {
+            socket.emit('show_translation', { language: lang });
+        }
+
+        function saveTranslation(lang) {
+            const text = document.getElementById(lang + '-box').value;
+            socket.emit('save_translation', { language: lang, text: text });
+        }
+
+        function playAudio(lang) {
+            socket.emit('play_audio', { language: lang });
+        }
+
+        function nextSentence() {
+            socket.emit('next_sentence');
+        }
+
+        socket.on('update_translation', data => {
+            document.getElementById(data.language + '-box').value = data.text;
+        });
+
+        socket.on('play_audio_file', data => {
+            const audio = document.getElementById('audio-player');
+            audio.src = data.file_path;
+            audio.style.display = 'block';
+            audio.play();
+        });
+
+        socket.on('new_sentence', data => {
+            document.getElementById('english-sentence').innerText = data.english;
+            document.getElementById('italian-box').value = '';
+            document.getElementById('spanish-box').value = '';
+        });
+
+        socket.on('save_success', data => {
+			alert(`${data.language} translation saved!`);
+        });
+    </script>
+</body>
+</html>

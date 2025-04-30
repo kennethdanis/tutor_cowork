@@ -1,0 +1,20 @@
+You look like you're about to cry.	Sembra che stai per piangere.	Italian2_4604	English2_4604	A_7524	Pareces a punto de llorar.	Span_01
+He made her clean the room.	Le ha fatto pulire la stanza.	Italian1_1642	English1_1642	A_2996	La hizo limpiar la habitación.	Span_02
+I'm speaking of a lion.	Sto parlando di un leone.	Italian2_0160	English2_0160	A_1431	Hablo de un león.	Span_03
+I've been invited to a party	Sono stata invitata  a una festa	I_1862	E_1862	P_1862	Me han invitado a una fiesta.	Span_04
+I wanted a 2 euro stamp	volevo un francobollo da 2 euro	I_0769	E_0769	P_0769	Quería un sello de 2 euros.	Span_05
+Speaking English is difficult.	Parlare inglese è difficile.	Italian2_1779	English2_1779	A_5785	Hablar inglés es difícil.	Span_06
+I drink milk almost every day.	Bevo latte quasi tutti i giorni.	Italian1_2982	English1_2982	A_3708	Bebo leche casi todos los días.	Span_07
+I saw Tom a few minutes ago.	Io ho visto Tom qualche minuto fa.	Italian1_3876	English1_3876	A_1081	Vi a Tom hace unos minutos.	Span_08
+Are there any letters for me?	Ci sono delle lettere per me?	Italian1_0080	English1_0080	A_2200	¿Tienes alguna carta para mí?	Span_09
+What is your surname?	Qual è il Suo cognome?	I_0965	E_0965	P_0965	¿Cuál es tu apellido?	Span_10
+That's exactly what I thought.	È esattamente ciò che ho pensato.	Italian2_1868	English2_1868	A_5851	Eso mismo pensé.	Span_11
+We're out of sugar.	Abbiamo finito lo zucchero.	Italian2_3631	English2_3631	A_7018	No tenemos azúcar.	Span_12
+You left the door open.	Hai lasciato la porta aperta.	Italian2_4590	English2_4590	A_7518	Dejaste la puerta abierta.	Span_13
+When we've received the invoice, we'll send you the money	Quando  avremo ricevuto  la fattura, Le  invieremo  i soldi	I_1707	E_1707	P_1707	Cuando recibamos la factura, te enviaremos el dinero.	Span_14
+He's always at home on Mondays.	Lui è sempre a casa il lunedì.	Italian1_1964	English1_1964	A_0604	Siempre está en casa los lunes.	Span_15
+I was actually born in Boston.	In realtà sono nata a Boston.	Italian1_4312	English1_4312	A_1182	De hecho, nací en Boston.	Span_16
+Did you already use my cup?	Hai già usato la mia tazza?	Italian1_1090	English1_1090	A_2379	¿Ya usaste mi taza?	Span_17
+She put it in the box.	L'ha messo nella scatola.	Italian2_1554	English2_1554	A_1730	La puso en la caja.	Span_18
+Our firm was not familiar with the English market	La nostra azienda non  conosceva  il mercato inglese	I_1437	E_1437	P_1437	Nuestra empresa no estaba familiarizada con el mercado inglés.	Span_19
+He is off duty today.	Lui non è in servizio oggi.	Italian1_1497	English1_1497	A_2906	Hoy está libre.	Span_20
