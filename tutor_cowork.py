@@ -12,32 +12,36 @@ app.config['SECRET_KEY'] = 'secret!'
 socketio = SocketIO(app)
 
 audio_folder = 'audio_files'
-current_line = {}
 lines = []
 
-# Get the absolute path to master.txt
+# Get absolute paths
 base_dir = os.path.dirname(os.path.abspath(__file__))
 master_path = os.path.join(base_dir, 'master.txt')
+log_path = os.path.join(base_dir, 'translation_log.txt')
 
+# Load lines on startup
 def load_lines():
     with open(master_path, 'r', encoding='utf-8') as file:
         return [line.strip().split('\t') for line in file if line.strip()]
 
-# ✅ Load lines immediately at module load time (so they’re available under Gunicorn)
 lines = load_lines()
 if not lines:
     print("⚠ WARNING: No lines loaded from master.txt!")
 
-def select_random_line():
-    if not lines:
-        return ["No lines loaded in master.txt", "", "", "", "", "", ""]
-    return random.choice(lines)
+# Initialize shared current_line
+current_line = random.choice(lines)
 
 @app.route('/')
 def index():
-    global current_line
-    current_line = select_random_line()
     return render_template('index.html', english=current_line[0])
+
+@socketio.on('request_current_state')
+def handle_request_current_state():
+    emit('sync_current_state', {
+        'english': current_line[0],
+        'italian': current_line[1],
+        'spanish': current_line[5]
+    })
 
 @socketio.on('show_translation')
 def handle_show_translation(data):
@@ -73,7 +77,7 @@ def handle_save_translation(data):
     with open(master_path, 'w', encoding='utf-8') as file:
         file.writelines(all_lines)
 
-    with open(os.path.join(base_dir, 'translation_log.txt'), 'a', encoding='utf-8') as log_file:
+    with open(log_path, 'a', encoding='utf-8') as log_file:
         timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         log_file.write(f"{timestamp}\t{current_line[4]}\t{current_line[0]}\t{lang}\t{new_text}\n")
     emit('save_success', {'language': lang})
@@ -88,22 +92,24 @@ def handle_play_audio(data):
 @socketio.on('next_sentence')
 def handle_next_sentence():
     global current_line
-    current_line = select_random_line()
-    emit('new_sentence', {'english': current_line[0]}, broadcast=True)
-
+    current_line = random.choice(lines)
+    emit('new_sentence', {
+        'english': current_line[0],
+        'italian': current_line[1],
+        'spanish': current_line[5]
+    }, broadcast=True)
 
 @socketio.on('edit_translation')
 def handle_edit_translation(data):
     lang = data['language']
     text = data['text']
-
-    # Update the shared current_line in memory
     index = 1 if lang == 'italian' else 5
+
+    # Update the shared in-memory line
     current_line[index] = text
 
     # Broadcast the change to all other clients
     emit('update_translation_live', {'language': lang, 'text': text}, broadcast=True, include_self=False)
-
 
 if __name__ == '__main__':
     socketio.run(app, debug=True, host='0.0.0.0', port=5000)

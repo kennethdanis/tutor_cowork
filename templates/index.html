@@ -5,10 +5,13 @@
     <script src="https://cdn.socket.io/4.6.1/socket.io.min.js"></script>
     <style>
         input[type="text"] {
-            width: 100%;
-            height: 3em; /* roughly two lines tall */
-            font-size: 1em;
-            white-space: normal;
+            width: 90%;
+            min-height: 3em;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        button {
+            margin: 2px;
         }
     </style>
 </head>
@@ -17,16 +20,20 @@
     <p id="english-sentence">{{ english }}</p>
 
     <h3>Italian Translation</h3>
-    <input type="text" id="italian-box" oninput="checkInput('italian')">
-    <button onclick="showTranslation('italian')">Show Translation</button>
-    <button id="save-italian" onclick="saveTranslation('italian')" disabled>Save Changes</button>
-    <button onclick="playAudio('italian')">Play Translation</button>
+    <input type="text" id="italian-box" oninput="handleEdit('italian')">
+    <div>
+        <button onclick="showTranslation('italian')">Show Translation</button>
+        <button id="save-italian" onclick="saveTranslation('italian')" disabled>Save Changes</button>
+        <button onclick="playAudio('italian')">Play Translation</button>
+    </div>
 
     <h3>Spanish Translation</h3>
-    <input type="text" id="spanish-box" oninput="checkInput('spanish')">
-    <button onclick="showTranslation('spanish')">Show Translation</button>
-    <button id="save-spanish" onclick="saveTranslation('spanish')" disabled>Save Changes</button>
-    <button onclick="playAudio('spanish')">Play Translation</button>
+    <input type="text" id="spanish-box" oninput="handleEdit('spanish')">
+    <div>
+        <button onclick="showTranslation('spanish')">Show Translation</button>
+        <button id="save-spanish" onclick="saveTranslation('spanish')" disabled>Save Changes</button>
+        <button onclick="playAudio('spanish')">Play Translation</button>
+    </div>
 
     <br><br>
     <button onclick="nextSentence()">Next Sentence</button>
@@ -63,41 +70,57 @@
             socket.emit('next_sentence');
         }
 
-        function checkInput(lang) {
+        function handleEdit(lang) {
             const current = document.getElementById(`${lang}-box`).value;
             const isChanged = current.trim() !== originalText[lang].trim();
             document.getElementById(`save-${lang}`).disabled = !isChanged;
-
-            // Emit live edit event to server
             socket.emit('edit_translation', { language: lang, text: current });
         }
 
+        // Receive updated translation from server on show
         socket.on('update_translation', data => {
             document.getElementById(`${data.language}-box`).value = data.text;
             originalText[data.language] = data.text;
             document.getElementById(`save-${data.language}`).disabled = true;
         });
 
-        // NEW: Listen for live updates from other user
+        // Receive live edits from the other user
         socket.on('update_translation_live', data => {
             document.getElementById(`${data.language}-box`).value = data.text;
         });
 
+        // Handle next sentence broadcast
+        socket.on('new_sentence', data => {
+            document.getElementById('english-sentence').innerText = data.english;
+            document.getElementById('italian-box').value = data.italian;
+            document.getElementById('spanish-box').value = data.spanish;
+            originalText['italian'] = data.italian;
+            originalText['spanish'] = data.spanish;
+            document.getElementById('save-italian').disabled = true;
+            document.getElementById('save-spanish').disabled = true;
+        });
+
+        // Sync full state when connecting
+        socket.emit('request_current_state');
+
+        socket.on('sync_current_state', data => {
+            document.getElementById('english-sentence').innerText = data.english;
+            document.getElementById('italian-box').value = data.italian;
+            document.getElementById('spanish-box').value = data.spanish;
+            originalText['italian'] = data.italian;
+            originalText['spanish'] = data.spanish;
+            document.getElementById('save-italian').disabled = true;
+            document.getElementById('save-spanish').disabled = true;
+        });
+
+        // Handle audio playback
         socket.on('play_audio_file', data => {
             const audio = document.getElementById('audio-player');
             audio.src = data.file_path;
             audio.play();
         });
 
-        socket.on('new_sentence', data => {
-            document.getElementById('english-sentence').innerText = data.english;
-            ['italian', 'spanish'].forEach(lang => {
-                document.getElementById(`${lang}-box`).value = '';
-                originalText[lang] = '';
-                document.getElementById(`save-${lang}`).disabled = true;
-            });
-        });
-
+        // Confirm save success
         socket.on('save_success', data => {
             alert(`${data.language} translation saved!`);
         });
