@@ -91,12 +91,18 @@ def handle_next_sentence():
     current_line = select_random_line()
     emit('new_sentence', {'english': current_line[0]}, broadcast=True)
 
+
 @socketio.on('edit_translation')
 def handle_edit_translation(data):
     lang = data['language']
     text = data['text']
-    emit('update_translation_live', {'language': lang, 'text': text}, broadcast=True, include_self=False)
 
+    # Update the shared current_line in memory
+    index = 1 if lang == 'italian' else 5
+    current_line[index] = text
+
+    # Broadcast the change to all other clients
+    emit('update_translation_live', {'language': lang, 'text': text}, broadcast=True, include_self=False)
 
 
 if __name__ == '__main__':
