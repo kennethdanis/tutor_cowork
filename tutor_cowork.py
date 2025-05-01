@@ -2,6 +2,7 @@ from datetime import datetime
 from flask import Flask, render_template
 from flask_socketio import SocketIO, emit
 import random
+import os
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret!'
@@ -11,8 +12,12 @@ audio_folder = 'audio_files'
 current_line = {}
 lines = []
 
+# Get the absolute path to master.txt
+base_dir = os.path.dirname(os.path.abspath(__file__))
+master_path = os.path.join(base_dir, 'master.txt')
+
 def load_lines():
-    with open('master.txt', 'r', encoding='utf-8') as file:
+    with open(master_path, 'r', encoding='utf-8') as file:
         return [line.strip().split('\t') for line in file if line.strip()]
 
 def select_random_line():
@@ -45,7 +50,7 @@ def handle_save_translation(data):
     index = 1 if lang == 'italian' else 5
     current_line[index] = new_text
 
-    with open('master.txt', 'r', encoding='utf-8') as file:
+    with open(master_path, 'r', encoding='utf-8') as file:
         all_lines = file.readlines()
 
     for i, line in enumerate(all_lines):
@@ -55,12 +60,11 @@ def handle_save_translation(data):
             all_lines[i] = '\t'.join(fields) + '\n'
             break
 
-    with open('master.txt', 'w', encoding='utf-8') as file:
+    with open(master_path, 'w', encoding='utf-8') as file:
         file.writelines(all_lines)
 
-
     # Step 3: Log the change
-    with open('translation_log.txt', 'a', encoding='utf-8') as log_file:
+    with open(os.path.join(base_dir, 'translation_log.txt'), 'a', encoding='utf-8') as log_file:
         timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         log_file.write(f"{timestamp}\t{current_line[4]}\t{current_line[0]}\t{lang}\t{new_text}\n")
     emit('save_success', {'language': lang})
@@ -70,7 +74,7 @@ def handle_play_audio(data):
     lang = data['language']
     filename_stem = current_line[2] if lang == 'italian' else current_line[6]
     file_path = f'/static/audio_files/{filename_stem}.mp3'
-    emit('play_audio_file', {'file_path': file_path})  # 🔁 back to file_path
+    emit('play_audio_file', {'file_path': file_path})
 
 @socketio.on('next_sentence')
 def handle_next_sentence():
