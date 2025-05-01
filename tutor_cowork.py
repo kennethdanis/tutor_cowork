@@ -47,15 +47,15 @@ def handle_request_current_state():
 def handle_show_translation(data):
     lang = data['language']
     if lang == 'italian':
-        emit('update_translation', {'language': 'italian', 'text': current_line[1]})
+        emit('update_translation', {'language': 'italian', 'text': current_line[1]}, broadcast=True)
         filename_stem = current_line[2]
     elif lang == 'spanish':
-        emit('update_translation', {'language': 'spanish', 'text': current_line[5]})
+        emit('update_translation', {'language': 'spanish', 'text': current_line[5]}, broadcast=True)
         filename_stem = current_line[6]
     else:
         return
     file_path = f'/static/audio_files/{filename_stem}.mp3'
-    emit('play_audio_file', {'file_path': file_path})
+    emit('play_audio_file', {'file_path': file_path}, broadcast=True)
 
 @socketio.on('save_translation')
 def handle_save_translation(data):
@@ -87,7 +87,7 @@ def handle_play_audio(data):
     lang = data['language']
     filename_stem = current_line[2] if lang == 'italian' else current_line[6]
     file_path = f'/static/audio_files/{filename_stem}.mp3'
-    emit('play_audio_file', {'file_path': file_path}, broadcast=True)  # ensure both users hear audio
+    emit('play_audio_file', {'file_path': file_path}, broadcast=True)
 
 @socketio.on('next_sentence')
 def handle_next_sentence():
