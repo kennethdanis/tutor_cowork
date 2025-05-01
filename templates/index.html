@@ -3,6 +3,14 @@
 <head>
     <title>Tutor Cowork</title>
     <script src="https://cdn.socket.io/4.6.1/socket.io.min.js"></script>
+    <style>
+        input[type="text"] {
+            width: 100%;
+            height: 3em; /* roughly two lines tall */
+            font-size: 1em;
+            white-space: normal; /* allow wrapping (visual, even if input is single-line) */
+        }
+    </style>
 </head>
 <body>
     <h2>English:</h2>
@@ -28,7 +36,6 @@
     <script>
         const socket = io();
 
-        // Track original loaded text for comparison
         const originalText = {
             italian: '',
             spanish: ''
@@ -44,7 +51,7 @@
             if (confirmSave) {
                 socket.emit('save_translation', { language: lang, text: text });
                 document.getElementById(`save-${lang}`).disabled = true;
-                originalText[lang] = text;  // Update original after saving
+                originalText[lang] = text;
             }
         }
 
