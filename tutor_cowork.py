@@ -20,7 +20,14 @@ def load_lines():
     with open(master_path, 'r', encoding='utf-8') as file:
         return [line.strip().split('\t') for line in file if line.strip()]
 
+# ✅ Load lines immediately at module load time (so they’re available under Gunicorn)
+lines = load_lines()
+if not lines:
+    print("⚠ WARNING: No lines loaded from master.txt!")
+
 def select_random_line():
+    if not lines:
+        return ["No lines loaded in master.txt", "", "", "", "", "", ""]
     return random.choice(lines)
 
 @app.route('/')
@@ -63,7 +70,6 @@ def handle_save_translation(data):
     with open(master_path, 'w', encoding='utf-8') as file:
         file.writelines(all_lines)
 
-    # Step 3: Log the change
     with open(os.path.join(base_dir, 'translation_log.txt'), 'a', encoding='utf-8') as log_file:
         timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         log_file.write(f"{timestamp}\t{current_line[4]}\t{current_line[0]}\t{lang}\t{new_text}\n")
@@ -83,5 +89,4 @@ def handle_next_sentence():
     emit('new_sentence', {'english': current_line[0]}, broadcast=True)
 
 if __name__ == '__main__':
-    lines = load_lines()
     socketio.run(app, debug=True, host='0.0.0.0', port=5000)
