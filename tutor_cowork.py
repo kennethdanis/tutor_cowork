@@ -1,4 +1,7 @@
-from datetime import datetime
+import eventlet
+eventlet.monkey_patch()
+
+]from datetime import datetime
 from flask import Flask, render_template
 from flask_socketio import SocketIO, emit
 import random
@@ -87,6 +90,14 @@ def handle_next_sentence():
     global current_line
     current_line = select_random_line()
     emit('new_sentence', {'english': current_line[0]}, broadcast=True)
+
+@socketio.on('edit_translation')
+def handle_edit_translation(data):
+    lang = data['language']
+    text = data['text']
+    emit('update_translation_live', {'language': lang, 'text': text}, broadcast=True, include_self=False)
+
+
 
 if __name__ == '__main__':
     socketio.run(app, debug=True, host='0.0.0.0', port=5000)
