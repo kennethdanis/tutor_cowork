@@ -1,20 +1,250 @@
-You look like you're about to cry.	Sembra che stai per piangere.	Italian2_4604	English2_4604	A_7524	Pareces a punto de llorar.	Span_01
-He made her clean the room.	Le ha fatto pulire la stanza.	Italian1_1642	English1_1642	A_2996	La hizo limpiar la habitación.	Span_02
-I'm speaking of a lion.	Sto parlando di un leone.	Italian2_0160	English2_0160	A_1431	Hablo de un león.	Span_03
-I've been invited to a party	Sono stata invitata  a una festa	I_1862	E_1862	P_1862	Me han invitado a una fiesta.	Span_04
-I wanted a 2 euro stamp	volevo un francobollo da 2 euro	I_0769	E_0769	P_0769	Quería un sello de 2 euros.	Span_05
-Speaking English is difficult.	Parlare inglese è difficile.	Italian2_1779	English2_1779	A_5785	Hablar inglés es difícil.	Span_06
-I drink milk almost every day.	Bevo latte quasi tutti i giorni.	Italian1_2982	English1_2982	A_3708	Bebo leche casi todos los días.	Span_07
-I saw Tom a few minutes ago.	Io ho visto Tom qualche minuto fa.	Italian1_3876	English1_3876	A_1081	Vi a Tom hace unos minutos.	Span_08
-Are there any letters for me?	Ci sono delle lettere per me?	Italian1_0080	English1_0080	A_2200	¿Tienes alguna carta para mí?	Span_09
-What is your surname?	Qual è il Suo cognome?	I_0965	E_0965	P_0965	¿Cuál es tu apellido?	Span_10
-That's exactly what I thought.	È esattamente ciò che ho pensato.	Italian2_1868	English2_1868	A_5851	Eso mismo pensé.	Span_11
-We're out of sugar.	Abbiamo finito lo zucchero.	Italian2_3631	English2_3631	A_7018	No tenemos azúcar.	Span_12
-You left the door open.	Hai lasciato la porta aperta.	Italian2_4590	English2_4590	A_7518	Dejaste la puerta abierta.	Span_13
-When we've received the invoice, we'll send you the money	Quando  avremo ricevuto  la fattura, Le  invieremo  i soldi	I_1707	E_1707	P_1707	Cuando recibamos la factura, te enviaremos el dinero.	Span_14
-He's always at home on Mondays.	Lui è sempre a casa il lunedì.	Italian1_1964	English1_1964	A_0604	Siempre está en casa los lunes.	Span_15
-I was actually born in Boston.	In realtà sono nata a Boston.	Italian1_4312	English1_4312	A_1182	De hecho, nací en Boston.	Span_16
-Did you already use my cup?	Hai già usato la mia tazza?	Italian1_1090	English1_1090	A_2379	¿Ya usaste mi taza?	Span_17
-She put it in the box.	L'ha messo nella scatola.	Italian2_1554	English2_1554	A_1730	La puso en la caja.	Span_18
-Our firm was not familiar with the English market	La nostra azienda non  conosceva  il mercato inglese	I_1437	E_1437	P_1437	Nuestra empresa no estaba familiarizada con el mercado inglés.	Span_19
-He is off duty today.	Lui non è in servizio oggi.	Italian1_1497	English1_1497	A_2906	Hoy está libre.	Span_20
+I'm speaking of a lion.	Sto parlando di un leone.	Italian2_0160	English2_0160	A_1431	Hablo de un león.	Span_001
+She put it in the box.	L'ha messo nella scatola.	Italian2_1554	English2_1554	A_1730	Ella lo puso en la caja.	Span_002
+Who are your parents?	Chi sono i tuoi genitori?	Italian2_4102	English2_4102	A_7264	¿Quiénes son tus padres?	Span_003
+I'll leave before having dinner	Partirò  prima di  cenare	I_0499	E_0499	P_0499	Me iré antes de cenar.	Span_004
+The train will arrive soon.	Il treno arriverà presto.	Italian2_2076	English2_2076	A_5997	El tren llegará pronto.	Span_005
+Why doesn't she look at me anymore?	Perché non mi guarda più?	Italian2_4247	English2_4247	A_2136	¿Por qué ya no me mira?	Span_006
+He wants to see us again.	Lui vuole vederci ancora.	Italian1_1806	English1_1806	A_3087	Quiere volver a vernos.	Span_007
+I wouldn't be surprised.	Io non ne sarei sorpresa.	Italian1_4588	English1_4588	A_4565	No me sorprendería.	Span_008
+How old is that dog?	Quanti anni ha quel cane?	Italian1_2203	English1_2203	A_3321	¿Cuántos años tiene ese perro?	Span_009
+She hasn't got a lot to give.	Lei non ha molto da dare.	Italian2_1401	English2_1401	A_0195	No tiene mucho que dar.	Span_010
+Tom brought flowers.	Tom ha portato dei fiori.	Italian2_2560	English2_2560	A_6348	Tom trajo flores.	Span_011
+I don't know whether he will join us.	Non so se si unirà a noi.	Italian1_2851	English1_2851	A_3636	No sé si vendrá con nosotros.	Span_012
+It's obvious that he's wrong.	È ovvio che lui ha torto.	Italian2_0498	English2_0498	A_5049	Es obvio que se equivoca.	Span_013
+I'm drinking a beer.	Io sto bevendo una birra.	Italian1_4927	English1_4927	A_4726	Estoy bebiendo una cerveza.	Span_014
+He is able to swim like a fish.	Sa nuotare come un pesce.	Italian1_1455	English1_1455	A_0442	Él sabe nadar como un pez.	Span_015
+How do you feel about it?	Come ti senti a riguardo?	Italian1_2096	English1_2096	A_3262	¿Qué te parece?	Span_016
+What does it actually mean?	Cosa vuol dire in realtà?	Italian2_3767	English2_3767	A_7084	¿Qué significa realmente?	Span_017
+I just want to leave.	Io voglio solo andarmene.	Italian1_3430	English1_3430	A_3935	Solo quiero irme.	Span_018
+I go to school by bus.	Vado a scuola in autobus.	Italian1_3078	English1_3078	A_0883	Voy a la escuela en autobús.	Span_019
+Give me the cup of coffee!	Datemi la tazza di caffè!	Italian1_1055	English1_1055	A_2682	¡Dame la taza de café!	Span_020
+Tom is a former student of mine.	Tom è un mio ex studente.	Italian2_2876	English2_2876	A_6547	Tom es un antiguo alumno mío.	Span_021
+These horses are his.	Questi cavalli sono suoi.	Italian2_2201	English2_2201	A_1842	Estos caballos son suyos.	Span_022
+She's turned twenty-one	Ha compiuto vent un  anni	I_0801	E_0801	P_0801	Ha cumplido veintiún años.	Span_023
+She's in the hospital now.	Lei è in ospedale adesso.	Italian2_1702	English2_1702	A_5733	Ahora está en el hospital.	Span_024
+Your car is fast.	La tua macchina è veloce.	Italian2_4847	English2_4847	A_7621	Tu coche es rápido.	Span_025
+No one is speaking.	Non sta parlando nessuno.	Italian2_0984	English2_0984	A_5370	Nadie habla.	Span_026
+I've only got one left.	Me ne resta soltanto uno.	Italian2_0599	English2_0599	A_1516	Solo me queda uno.	Span_027
+Should I buy something?	Dovrei comprare qualcosa?	Italian2_1730	English2_1730	A_5751	¿Debería comprar algo?	Span_028
+I like your tie.	Mi piace la tua cravatta.	Italian1_3595	English1_3595	A_4028	Me gusta tu corbata.	Span_029
+How old is your grandfather?	Quanti anni ha tuo nonno?	Italian1_2209	English1_2209	A_3325	¿Cuántos años tiene tu abuelo?	Span_030
+I don't speak French.	Io non parlo in francese.	Italian1_2897	English1_2897	A_3665	No hablo francés.	Span_031
+How much is this biro?	Quanto costa questa biro?	Italian1_2178	English1_2178	A_3308	¿Cuánto cuesta este bolígrafo?	Span_032
+They searched for the girl.	Hanno cercato la ragazza.	Italian2_2282	English2_2282	A_6150	Buscaron a la chica.	Span_033
+Tom made a speech.	Tom ha fatto un discorso.	Italian2_3056	English2_3056	A_6693	Tom dio un discurso.	Span_034
+Don't (you pl.) touch my bag.	Non toccate la mia borsa.	Italian1_0937	English1_0937	A_0336	No toquen mi bolso.	Span_035
+It's up to you to make a choice.	Sta a te fare una scelta.	Italian2_0521	English2_0521	A_5066	Depende de ustedes tomar una decisión.	Span_036
+She is gone shopping.	È andata a fare la spesa.	Italian2_1438	English2_1438	A_5586	Ella se fue de compras.	Span_037
+He wanted to buy a book.	Voleva comprare un libro.	Italian1_1790	English1_1790	A_3079	Él quería comprar un libro.	Span_038
+They're the same age.	Loro hanno la stessa età.	Italian2_2325	English2_2325	A_6177	Tienen la misma edad.	Span_039
+I'll find one later.	Ne troverò una più tardi.	Italian1_4768	English1_4768	A_4647	Encontraré uno más tarde.	Span_040
+I'll get my bag.	Io prenderò la mia borsa.	Italian1_4771	English1_4771	A_4649	Iré por mi bolso.	Span_041
+She wants to be the singer.	Vuole essere la cantante.	Italian2_1631	English2_1631	A_5690	Ella quiere ser la cantante.	Span_042
+Don't look into the box.	Non guardi nella scatola.	Italian1_0886	English1_0886	A_0315	No mires dentro de la caja.	Span_043
+Have you ever been to New York?	Sei mai stato a New York?	Italian1_1138	English1_1138	A_2715	¿Has estado alguna vez en Nueva York?	Span_044
+Tom won't talk to Mary.	Tom non parlerà con Mary.	Italian2_3279	English2_3279	A_6827	Tom no quiere hablar con Mary.	Span_045
+This would be a mistake.	Questo sarebbe un errore.	Italian2_2463	English2_2463	A_6285	Eso sería un error.	Span_046
+He denied that fact.	Lui ha negato quel fatto.	Italian1_1274	English1_1274	A_2780	Él negó ese hecho.	Span_047
+I woke up early.	Io mi sono alzata presto.	Italian1_4508	English1_4508	A_4525	Me desperté temprano.	Span_048
+I have to go to the bank now.	Devo andare in banca ora.	Italian1_3302	English1_3302	A_3876	Tengo que ir al banco ahora.	Span_049
+He is accustomed to the work.	Lui è abituato al lavoro.	Italian1_1458	English1_1458	A_2877	Él está acostumbrado al trabajo.	Span_050
+Please don't ask.	Per favore, non chiedere.	Italian2_1130	English2_1130	A_5435	Por favor, no preguntes.	Span_051
+What actually happened?	Cos'è successo in realtà?	Italian2_3662	English2_3662	A_7036	¿Qué pasó realmente?	Span_052
+Go and see him in person.	Vai a vederlo di persona.	Italian1_1070	English1_1070	A_0369	Ve a verlo en persona. 	Span_053
+I need a pencil.	Ho bisogno di una matita.	Italian1_3721	English1_3721	A_4109	Necesito un lápiz.	Span_054
+I got really hungry.	Mi è venuta davvero fame.	Italian1_3097	English1_3097	A_3772	Tenía mucha hambre.	Span_055
+He just left.	Lui se n'è appena andato.	Italian1_1570	English1_1570	A_2949	Se acaba de ir.	Span_056
+Tom is writing again.	Tom sta scrivendo ancora.	Italian2_2990	English2_2990	A_6646	Tom está escribiendo de nuevo.	Span_057
+There is somebody at the door	C'è  qualcuno  alla porta	I_0432	E_0432	P_0432	Hay alguien en la puerta.	Span_058
+I imagine that you are tired. (certain)	immagino che  sei  stanco	I_0551	E_0551	P_0551	Supongo que estás cansado. (seguro)	Span_059
+I go to school on a bus.	Vado a scuola in autobus.	Italian1_3080	English1_3080	A_0884	Voy a la escuela en autobús.	Span_060
+My head aches so.	La testa mi fa così male.	Italian2_0890	English2_0890	A_5300	Me duele mucho la cabeza.	Span_061
+He hasn't got a lot to give.	Lui non ha molto da dare.	Italian1_1411	English1_1411	A_0096	No tiene mucho que dar.	Span_062
+You should talk to Tom.	Dovresti parlare con Tom.	Italian2_4760	English2_4760	A_7584	Deberías hablar con Tom.	Span_063
+I don't know anything about this	Non  so  niente di questo	I_0580	E_0580	P_0580	No sé nada de esto.	Span_064
+I like this color.	A me piace questo colore.	Italian1_3566	English1_3566	A_4013	Me gusta este color.	Span_065
+She doesn't like sushi.	A lei non piace il sushi.	Italian2_1322	English2_1322	A_5527	No le gusta el sushi.	Span_066
+I have not seen him since.	Io non lo vedo da allora.	Italian1_3267	English1_3267	A_0133	No lo he visto desde entonces.	Span_067
+Was Tom working yesterday?	Tom stava lavorando ieri?	Italian2_3331	English2_3331	A_6856	¿Tom trabajaba ayer?	Span_068
+Let's go out to eat.	Andiamo fuori a mangiare.	Italian2_0682	English2_0682	A_5165	Salgamos a comer.	Span_069
+Has the movie started yet?	Il film è già cominciato?	Italian1_1098	English1_1098	A_2699	¿Ya empezó la película?	Span_070
+Mary has a flower in her hand.	Mary ha un fiore in mano.	Italian2_0732	English2_0732	A_5192	María tiene una flor en la mano.	Span_071
+I'll be with you in a sec.	Sarò da te tra un attimo.	Italian1_4724	English1_4724	A_0165	Estoy contigo en un segundo.	Span_072
+I'm a citizen of the world.	Sono cittadino del mondo.	Italian1_4851	English1_4851	A_1347	Soy un ciudadano del mundo.	Span_073
+Tom heard a noise.	Tom ha sentito un rumore.	Italian2_2858	English2_2858	A_6535	Tom oyó un ruido.	Span_074
+I forgot my money.	Mi sono scordato i soldi.	Italian1_3033	English1_3033	A_3736	Olvidé mi dinero.	Span_075
+She's a cutie.	Lei è una ragazza carina.	Italian2_1686	English2_1686	A_5720	Es una monada.	Span_076
+They are both good.	Loro sono entrambe buone.	Italian2_2215	English2_2215	A_6101	Los dos son buenos.	Span_077
+He was asleep in the bed.	Stava dormendo nel letto.	Italian1_1822	English1_1822	A_0563	Estaba dormido en la cama.	Span_078
+This is my desk	Questo   è  il mio tavolo	I_2022	E_2022	P_2022	Este es mi escritorio.	Span_079
+Do you know how to drive a car?	Sai guidare una macchina?	Italian1_0635	English1_0635	A_2460	¿Sabes conducir un coche?	Span_080
+He is pigeon-toed.	Lui ha i piedi in dentro.	Italian2_0717	English2_0717	A_2911	Él tiene patas de paloma.	Span_081
+She wrote the word.	Lei ha scritto la parola.	Italian2_1677	English2_1677	A_5716	Ella escribió la palabra.	Span_082
+How much is this pen?	Quanto costa questa biro?	Italian1_2181	English1_2181	A_3310	¿Cuánto cuesta este bolígrafo?	Span_083
+He is the older of the two.	È il più anziano dei due.	Italian1_1535	English1_1535	A_2928	Él es el mayor de los dos.	Span_084
+Tom is homesick.	Tom ha nostalgia di casa.	Italian2_2910	English2_2910	A_6579	Tom extraña su hogar.	Span_085
+I prefer to live alone	Preferisco vivere da solo	I_2260	E_2260	P_2260	Prefiero vivir solo.	Span_086
+I think I'll come back soon.	Penso che tornerò presto.	Italian1_3998	English1_3998	A_4275	Creo que volveré pronto.	Span_087
+You should get to school.	Dovresti andare a scuola.	Italian2_4723	English2_4723	A_7570	Deberías ir a la escuela.	Span_088
+Tom started laughing.	Tom ha iniziato a ridere.	Italian2_3155	English2_3155	A_1972	Tom se echó a reír.	Span_089
+I do it all the time.	Lo faccio tutte le volte.	Italian1_2725	English1_2725	A_3571	Lo hago todo el tiempo.	Span_090
+He accepted my idea.	Ha accettato la mia idea.	Italian1_1199	English1_1199	A_2735	Aceptó mi idea.	Span_091
+He is very busy now.	È molto impegnato adesso.	Italian1_1548	English1_1548	A_2937	Ahora está muy ocupado.	Span_092
+She is as good as gold.	Lei è buona come il pane.	Italian2_1432	English2_1432	A_5580	Ella es tan buena como el oro.	Span_093
+Everyone speaks a language.	Tutti parlano una lingua.	Italian1_0998	English1_0998	A_2649	Todos hablamos un idioma.	Span_094
+Welcome to my life.	Benvenuta nella mia vita.	Italian2_3576	English2_3576	A_6995	Bienvenido a mi vida.	Span_095
+Tom wasn't listening.	Tom non stava ascoltando.	Italian2_3230	English2_3230	A_6802	Tom no estaba escuchando.	Span_096
+He will be a good teacher.	Sarà un bravo insegnante.	Italian1_1891	English1_1891	A_0587	Será un buen profesor.	Span_097
+You're wrong in this case.	Ti sbagli in questo caso.	Italian2_4982	English2_4982	A_7687	Te equivocas en este caso.	Span_098
+My handbag has been stolen.	Mi hanno rubato la borsa.	Italian2_0889	English2_0889	A_5299	Me han robado el bolso.	Span_099
+This newspaper is free.	Questo giornale è libero.	Italian2_2430	English2_2430	A_6258	Este periódico es gratis.	Span_100
+Don't let me die here.	Non lasciarmi morire qui.	Italian1_0880	English1_0880	A_2568	No dejes que muera aquí.	Span_101
+He is on board the ship.	Lui è a bordo della nave.	Italian1_1499	English1_1499	A_2907	Él está a bordo del barco.	Span_102
+It wasn't an accident.	Non è stato un incidente.	Italian2_0448	English2_0448	A_5003	No fue un accidente.	Span_103
+We'll leave on the tenth of March	Partiamo il  dieci  marzo	I_0046	E_0046	P_0046	Saldremos el diez de marzo.	Span_104
+I found my shoes.	Ho trovato le mie scarpe.	Italian1_2045	English1_2045	A_3742	Encontré mis zapatos.	Span_105
+Let's go meet Tom.	Andiamo a incontrare Tom.	Italian2_0681	English2_0681	A_5164	Vamos a ver a Tom.	Span_106
+She is a friend of my wife's.	È un'amica di mia moglie.	Italian2_1420	English2_1420	A_5570	Es amiga de mi esposa. 	Span_107
+I live in Boston now.	Io abito a Boston adesso.	Italian1_3611	English1_3611	A_4037	Ahora vivo en Boston.	Span_108
+I gave Tom a choice.	Ho dato a Tom una scelta.	Italian1_3061	English1_3061	A_3751	Le di a Tom una opción.	Span_109
+Where are your clothes?	Dove sono i tuoi vestiti?	Italian2_4014	English2_4014	A_7212	¿Dónde está tu ropa?	Span_110
+Take that box away!	Porta via quella scatola!	Italian2_1805	English2_1805	A_5800	¡Llévate esa caja!	Span_111
+He lives next to me.	Lui abita di fianco a me.	Italian1_1624	English1_1624	A_2981	Vive a mi lado.	Span_112
+Don't take it to heart.	Non se la prenda a cuore.	Italian1_0927	English1_0927	A_2596	No te lo tomes a pecho.	Span_113
+I got up an hour ago.	Mi sono alzata un'ora fa.	Italian1_3102	English1_3102	A_0889	Me levanté hace una hora.	Span_114
+The reason for this is obvious.	Il motivo di ciò è ovvio.	Italian2_2032	English2_2032	A_5970	La razón es obvia.	Span_115
+he went out through the window	è uscito  dalla  finestra	I_0794	E_0794	P_0794	Salió por la ventana.	Span_116
+Good luck with that.	Buona fortuna con quello.	Italian1_1079	English1_1079	A_0374	Buena suerte con eso.	Span_117
+Tom stole your money.	Tom ti ha rubato i soldi.	Italian2_2787	English2_2787	A_6753	Tom te robó el dinero.	Span_118
+He never forgot her.	Non l'ha mai dimenticata.	Italian1_1668	English1_1668	A_0514	Nunca la olvidó.	Span_119
+A green tea, please.	Un tè verde, per piacere.	Italian1_0009	English1_0009	A_2154	Un té verde, por favor.	Span_120
+He's shorter than his father.	È più basso di suo padre.	Italian1_2006	English1_2006	A_3204	Es más bajo que su padre.	Span_121
+I go to Tokyo every day.	Vado a Tokyo ogni giorno.	Italian1_3084	English1_3084	A_0885	Voy a Tokio todos los días.	Span_122
+Give me a cup of coffee.	Dammi una tazza di caffè.	Italian1_1037	English1_1037	A_2674	Dame un café.	Span_123
+Would you like anything else?	Desidera qualcos' altro ?	I_1847	E_1847	P_1847	¿Quieres algo más?	Span_124
+I looked around me.	Ho guardato intorno a me.	Italian1_3614	English1_3614	A_4040	Miré a mi alrededor.	Span_125
+It looks like rain.	Sembra che stia piovendo.	Italian2_0417	English2_0417	A_4981	Parece que llueve.	Span_126
+What song is she playing?	Che canzone sta suonando?	Italian2_3873	English2_3873	A_2093	¿Qué canción está tocando?	Span_127
+Love if you want to be loved!	Ama se vuoi essere amato!	Italian2_0710	English2_0710	A_5182	¡Ama si quieres ser amado!	Span_128
+I can't blame them.	Non posso incolpare loro.	Italian1_2510	English1_2510	A_0714	No puedo culparlos.	Span_129
+I was very busy yesterday.	Ero molto impegnato ieri.	Italian1_4399	English1_4399	A_1225	Estuve muy ocupado ayer.	Span_130
+I like sports.	A me piacciono gli sport.	Italian1_3553	English1_3553	A_4004	Me gustan los deportes.	Span_131
+I intended to have been a doctor.	Volevo essere un dottore.	Italian1_3410	English1_3410	A_0968	Quería ser médico.	Span_132
+my sandals are broken	i miei sandali sono rotti	I_0152	E_0152	P_0152	Mis sandalias están rotas.	Span_133
+I won't be here long.	Io non starò qui a lungo.	Italian1_4530	English1_4530	A_4535	No estaré aquí mucho tiempo.	Span_134
+I'm glad to see you!	Sono contento di vederti!	Italian1_4943	English1_4943	A_4739	¡Me alegra verte!	Span_135
+She doesn't let me live!	Lei non mi lascia vivere!	Italian2_1321	English2_1321	A_5526	¡No me deja vivir!	Span_136
+Tom has money, but I don't.	Tom ha i soldi, ma io no.	Italian2_2840	English2_2840	A_6525	Tom tiene dinero, pero yo no.	Span_137
+I get lonely at times.	Io mi sento sola a volte.	Italian1_3072	English1_3072	A_3754	A veces me siento solo.	Span_138
+I go to school on foot.	Io vado a scuola a piedi.	Italian1_3081	English1_3081	A_3760	Voy a la escuela a pie.	Span_139
+I have homework to finish.	Ho dei compiti da finire.	Italian1_3233	English1_3233	A_0125	Tengo tarea que terminar.	Span_140
+What is on the desk?	Cosa c'è sulla scrivania?	Italian2_3812	English2_3812	A_7107	¿Qué hay en el escritorio?	Span_141
+What a fast horse that is!	Che cavallo veloce che è!	Italian2_3656	English2_3656	A_7032	¡Qué caballo tan rápido!	Span_142
+These horses are yours.	Questi cavalli sono tuoi.	Italian2_2203	English2_2203	A_6091	Estos caballos son tuyos.	Span_143
+I am interested in English.	A me interessa l'inglese.	Italian1_2292	English1_2292	A_3375	Me interesa el inglés.	Span_144
+Will you come with me to the store?	Verrai con me al negozio?	Italian2_4292	English2_4292	A_7378	¿Vienes conmigo a la tienda?	Span_145
+You should come, too.	Dovresti venire anche tu.	Italian2_4709	English2_4709	A_7566	Deberías venir también.	Span_146
+They haven't arrived yet.	Non sono ancora arrivate.	Italian2_2259	English2_2259	A_1853	Aún no han llegado.	Span_147
+He brings home the bread and butter.	Lui porta a casa il pane.	Italian1_1237	English1_1237	A_2757	Trae a casa el pan con mantequilla.	Span_148
+He pretends to know everything.	Fa finta di sapere tutto.	Italian1_1691	English1_1691	A_3027	Finge saberlo todo.	Span_149
+Reading has its rules.	Leggere ha le sue regole.	Italian2_1203	English2_1203	A_5462	Leer tiene sus reglas.	Span_150
+I lost my watch.	Ho perso il mio orologio.	Italian1_3622	English1_3622	A_4045	Perdí mi reloj.	Span_151
+I couldn't walk.	Non riuscivo a camminare.	Italian1_2661	English1_2661	A_0757	No podía caminar.	Span_152
+Tom and Mary are busy.	Tom e Mary sono occupati.	Italian2_2502	English2_2502	A_1899	Tom y Mary están ocupados.	Span_153
+Could you pass the salt?	Potresti passare il sale?	Italian1_0452	English1_0452	A_2369	¿Podrías pasarme la sal?	Span_154
+He put the phone down.	Ha messo giù il telefono.	Italian1_1702	English1_1702	A_3031	Colgó el teléfono.	Span_155
+I need more room.	Ho bisogno di più spazio.	Italian1_3734	English1_3734	A_4117	Necesito más espacio. 	Span_156
+I leave in an hour.	Io me ne vado tra un'ora.	Italian1_3530	English1_3530	A_0994	Me voy en una hora.	Span_157
+I gave you my word.	Ti ho dato la mia parola.	Italian1_3067	English1_3067	A_3753	Te di mi palabra.	Span_158
+Welcome to my life.	Benvenuto nella mia vita.	Italian2_3575	English2_3575	A_2060	Bienvenido a mi vida.	Span_159
+I looked around me.	Mi sono guardato intorno.	Italian1_3615	English1_3615	A_1013	Miré a mi alrededor.	Span_160
+Don't do anything dumb. (you, pl.)	Non fate nulla di idiota.	Italian1_0847	English1_0847	A_0304	No hagas ninguna tontería. (tú, pl.)	Span_161
+I believe that he is honest.	Credo che lui sia onesto.	Italian1_2405	English1_2405	A_3431	Creo que es honesto.	Span_162
+That's the only way to do it.	È l'unico modo per farlo.	Italian2_1878	English2_1878	A_5859	Es la única manera de hacerlo.	Span_163
+I'm trying to remember.	Sto provando a ricordare.	Italian2_0218	English2_0218	A_1450	Intento recordar.	Span_164
+I hope Tom says no.	Spero che Tom dica di no.	Italian1_3385	English1_3385	A_0966	Espero que Tom diga que no.	Span_165
+Mary has stopped smoking.	Mary ha smesso di fumare.	Italian2_0735	English2_0735	A_1544	María ha dejado de fumar.	Span_166
+We won the match.	Abbiamo vinto la partita.	Italian2_3552	English2_3552	A_6989	Ganamos el partido.	Span_167
+It won't take much time.	Non ci vorrà molto tempo.	Italian2_0453	English2_0453	A_5007	No tardará mucho.	Span_168
+It looks really hard!	Sembra davvero difficile!	Italian2_0421	English2_0421	A_4984	¡Parece muy difícil!	Span_169
+I miss my family.	La mia famiglia mi manca.	Italian1_3686	English1_3686	A_1031	Echo de menos a mi familia.	Span_170
+He is just a Mr Nobody.	È solo un signor Nessuno.	Italian1_1481	English1_1481	A_2893	Es solo un don nadie.	Span_171
+Do you see the father and the mother?	Vedi il padre e la madre?	Italian1_0728	English1_0728	A_2503	¿Ves al padre y a la madre?	Span_172
+She would be proud of me!	Sarebbe orgogliosa di me!	Italian2_1674	English2_1674	A_1760	¡Estaría orgullosa de mí!	Span_173
+We need fire.	Abbiamo bisogno di fuoco.	Italian2_3487	English2_3487	A_6946	Necesitamos fuego.	Span_174
+Tom hasn't slept a wink.	Tom non ha chiuso occhio.	Italian2_2855	English2_2855	A_6533	Tom no ha pegado ojo.	Span_175
+Was she working yesterday?	Lei stava lavorando ieri?	Italian2_3326	English2_3326	A_6853	¿Trabajaba ayer?	Span_176
+I know where to start.	Io so da dove cominciare.	Italian1_3493	English1_3493	A_0144	Sé por dónde empezar.	Span_177
+May I use this pen?	Posso usare questa penna?	Italian2_0780	English2_0780	A_1547	¿Puedo usar este bolígrafo?	Span_178
+I like languages.	A me piacciono le lingue.	Italian1_3544	English1_3544	A_3996	Me gustan los idiomas.	Span_179
+She's my first love.	Lei è il mio primo amore.	Italian2_1704	English2_1704	A_5735	Es mi primer amor.	Span_180
+We will never agree.	Non saremo mai d'accordo.	Italian2_3551	English2_3551	A_2055	Nunca estaremos de acuerdo.	Span_181
+I haven't seen Tom today.	Io non ho visto Tom oggi.	Italian1_3339	English1_3339	A_3893	No he visto a Tom hoy.	Span_182
+His parents love me.	I suoi genitori mi amano.	Italian1_2036	English1_2036	A_3230	Sus padres me quieren.	Span_183
+Tom blinked his eyes.	Tom ha battuto gli occhi.	Italian2_2550	English2_2550	A_6344	Tom parpadeó.	Span_184
+No one is talking.	Non sta parlando nessuno.	Italian2_0985	English2_0985	A_1579	Nadie habla. 	Span_185
+I am doing my homework.	Io sto facendo i compiti.	Italian1_2271	English1_2271	A_3359	Estoy haciendo mi tarea.	Span_186
+They smiled at Tom.	Loro hanno sorriso a Tom.	Italian2_2283	English2_2283	A_6151	Le sonrieron a Tom.	Span_187
+Who sings this song?	Chi canta questa canzone?	Italian2_4129	English2_4129	A_2118	¿Quién canta esta canción?	Span_188
+He is to start tomorrow.	Lui deve iniziare domani.	Italian1_1544	English1_1544	A_0470	Empezará mañana.	Span_189
+Tom cried for an hour.	Tom ha pianto per un'ora.	Italian2_2620	English2_2620	A_6384	Tom lloró durante una hora.	Span_190
+The work has already begun.	Il lavoro è già iniziato.	Italian2_2090	English2_2090	A_6009	El trabajo ya empezó.	Span_191
+He was afraid of the dark.	Lui aveva paura del buio.	Italian1_1817	English1_1817	A_3094	Le tenía miedo a la oscuridad.	Span_192
+Do you like your car?	Ti piace la tua macchina?	Italian1_0695	English1_0695	A_2488	¿Te gusta tu coche?	Span_193
+I'd like to have a coffee.	Vorrei prendere un caffè.	Italian1_4640	English1_4640	A_4590	Me gustaría tomar un café.	Span_194
+I didn't drink that milk.	Non ho bevuto quel latte.	Italian1_2682	English1_2682	A_3548	No bebí esa leche.	Span_195
+Never try to die.  (you, pl.)	Non provate mai a morire.	Italian2_0970	English2_0970	A_1576	Nunca intentes morir. (tú, pl.)	Span_196
+Do you like this garden?	Ti piace questo giardino?	Italian1_0692	English1_0692	A_2486	¿Te gusta este jardín?	Span_197
+I'll find one later.	Ne troverò uno più tardi.	Italian1_4769	English1_4769	A_1334	Encontraré uno más tarde.	Span_198
+Do whatever you want to do.	Fai quello che vuoi fare.	Italian1_0563	English1_0563	A_2428	Haz lo que quieras.	Span_199
+They didn't find it.	Loro non l'hanno trovato.	Italian2_2239	English2_2239	A_6119	No lo encontraron.	Span_200
+Tom has always loved Mary.	Tom ha sempre amato Mary.	Italian2_2832	English2_2832	A_6518	Tom siempre ha querido a Mary.	Span_201
+I knew it was right.	Lo sapevo che era giusto.	Italian1_3440	English1_3440	A_3941	Sabía que era lo correcto.	Span_202
+She has no real friends.	Non ha nessun vero amico.	Italian2_1397	English2_1397	A_1695	No tiene amigos de verdad.	Span_203
+I'd like to study in Paris.	Vorrei studiare a Parigi.	Italian1_4669	English1_4669	A_4604	Me gustaría estudiar en París.	Span_204
+It won't be much longer.	Non sarà molto più lungo.	Italian2_0451	English2_0451	A_1489	No tardará mucho.	Span_205
+Mary needs help.	Mary ha bisogno di aiuto.	Italian2_0752	English2_0752	A_5210	Mary necesita ayuda.	Span_206
+I'd like to meet Tom.	Io vorrei incontrare Tom.	Italian1_4655	English1_4655	A_1308	Me gustaría conocer a Tom.	Span_207
+I have a good dictionary.	Io ho un buon dizionario.	Italian1_3175	English1_3175	A_3815	Tengo un buen diccionario.	Span_208
+I don't even know what to say.	Non so neppure cosa dire.	Italian1_2780	English1_2780	A_0800	Ni siquiera sé qué decir.	Span_209
+Don't leave me here by myself.	Non mi lasci qui da sola.	Italian1_0873	English1_0873	A_0010	No me dejes aquí sola.	Span_210
+I wouldn't be so sure about that.	Non ne sarei così sicura.	Italian1_4585	English1_4585	A_4564	Yo no estaría tan segura de eso. 	Span_211
+They need a cab.	Hanno bisogno di un taxi.	Italian2_2274	English2_2274	A_6144	Necesitan un taxi.	Span_212
+He thinks I'm jealous.	Lui pensa che sia gelosa.	Italian1_1772	English1_1772	A_0543	Cree que estoy celosa.	Span_213
+This world is difficult.	Questo mondo è difficile.	Italian2_2462	English2_2462	A_6284	Este mundo es difícil.	Span_214
+Tom thinks that's strange.	Tom pensa che sia strano.	Italian2_3172	English2_3172	A_6760	Tom piensa que es extraño.	Span_215
+I remember what he said.	Ricordo ciò che ha detto.	Italian1_3844	English1_3844	A_4187	Recuerdo lo que dijo.	Span_216
+That's my medicine.	Questa è la mia medicina.	Italian2_1873	English2_1873	A_5855	Esa es mi medicina.	Span_217
+Why would you think that?	Perché dovresti pensarlo?	Italian2_4290	English2_4290	A_7377	¿Por qué pensarías eso?	Span_218
+I don't sleep in a bed.	Io non dormo in un letto.	Italian1_2893	English1_2893	A_3661	No duermo en una cama.	Span_219
+Tom is lying on the ground.	Tom è sdraiato per terra.	Italian2_2927	English2_2927	A_6591	Tom está tirado en el suelo.	Span_220
+Tom has a lot of money.	Tom ha un sacco di soldi.	Italian2_2821	English2_2821	A_1937	Tom tiene mucho dinero.	Span_221
+He asked me to dance.	Mi ha chiesto di ballare.	Italian1_1221	English1_1221	A_0387	Me invitó a bailar.	Span_222
+When did you go to Rome?	Quando sei andato a Roma?	Italian2_3974	English2_3974	A_7192	¿Cuándo fuiste a Roma?	Span_223
+I'll be busy tomorrow.	Io sarò impegnata domani.	Italian1_4711	English1_4711	A_4628	Mañana estaré ocupado.	Span_224
+She does not like sushi.	A lei non piace il sushi.	Italian2_1311	English2_1311	A_5519	A ella no le gusta el sushi.	Span_225
+My hobby is music.	Il mio hobby è la musica.	Italian2_0894	English2_0894	A_5304	Mi pasatiempo es la música.	Span_226
+We're out of tea.	Noi abbiamo finito il tè.	Italian2_3634	English2_3634	A_7019	Se nos acabó el té.	Span_227
+My dog bit Tom.	Il mio cane ha morso Tom.	Italian2_0850	English2_0850	A_5270	Mi perro mordió a Tom.	Span_228
+He is popular with everybody.	Lui è popolare tra tutti.	Italian1_1508	English1_1508	A_2915	Es popular entre todos.	Span_229
+Whose coat is this?	Di chi è questo cappotto?	Italian2_4140	English2_4140	A_7295	¿De quién es este abrigo?	Span_230
+She wept all the night.	Ha pianto tutta la notte.	Italian2_1660	English2_1660	A_5706	Lloró toda la noche.	Span_231
+She's about the same age as me.	Ha più o meno la mia età.	Italian2_1692	English2_1692	A_5725	Tiene más o menos mi edad.	Span_232
+There's someone at the door.	C'è qualcuno sulla porta.	Italian2_2185	English2_2185	A_6080	Hay alguien en la puerta.	Span_233
+I had a weird dream.	Ho fatto un sogno strano.	Italian1_3110	English1_3110	A_3780	Tuve un sueño extraño.	Span_234
+Tom has to go to the bank.	Tom deve andare in banca.	Italian2_2631	English2_2631	A_6529	Tom tiene que ir al banco.	Span_235
+They are both good.	Loro sono entrambi buoni.	Italian2_2214	English2_2214	A_1844	Ambos son buenos.	Span_236
+I tried to save Tom.	Ho provato a salvare Tom.	Italian1_4145	English1_4145	A_1142	Intenté salvar a Tom.	Span_237
+I'll go find a pen.	Andrò a trovare una biro.	Italian1_4783	English1_4783	A_4657	Iré a buscar un bolígrafo.	Span_238
+You shouldn't have done it.	Non avresti dovuto farlo.	Italian2_4769	English2_4769	A_7588	No deberías haberlo hecho. 	Span_239
+You may stay here if you want to.	Puoi restare qui se vuoi.	Italian2_4618	English2_4618	A_7532	Puedes quedarte aquí si quieres.	Span_240
+That lake looks like the sea.	Quel lago sembra il mare.	Italian2_1844	English2_1844	A_5831	Ese lago parece el mar.	Span_241
+I know Tom understands.	Io lo so che Tom capisce.	Italian1_3490	English1_3490	A_3971	Sé que Tom lo entiende.	Span_242
+I have a black and white dog.	Ho un cane bianco e nero.	Italian1_3156	English1_3156	A_3806	Tengo un perro blanco y negro.	Span_243
+You are the best guys.	Siete i migliori ragazzi.	Italian2_4377	English2_4377	A_7423	Son los mejores.	Span_244
+Tom missed his flight.	Tom ha perso il suo volo.	Italian2_3066	English2_3066	A_6701	Tom perdió su vuelo.	Span_245
+I'm concerned about Tom.	Sono preoccupato per Tom.	Italian1_4922	English1_4922	A_1371	Estoy preocupada por Tom.	Span_246
+How long do we have?	Noi quanto tempo abbiamo?	Italian1_2134	English1_2134	A_3283	¿Cuánto tiempo nos queda?	Span_247
+My fiancé is Jewish.	il mio fidanzato è ebreo.	I_1461	E_1461	P_1461	Mi prometido es judío.	Span_248
+You didn't pass the test?	Non hai superato il test?	Italian2_4486	English2_4486	A_7474	¿No pasaste el examen?	Span_249
+I didn't understand the question.	Non ho capito la domanda.	Italian1_2721	English1_2721	A_0775	No entendí la pregunta.	Span_250

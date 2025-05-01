@@ -1,3 +1,4 @@
+from datetime import datetime
 from flask import Flask, render_template
 from flask_socketio import SocketIO, emit
 import random
@@ -28,8 +29,14 @@ def handle_show_translation(data):
     lang = data['language']
     if lang == 'italian':
         emit('update_translation', {'language': 'italian', 'text': current_line[1]})
+        filename_stem = current_line[2]
     elif lang == 'spanish':
         emit('update_translation', {'language': 'spanish', 'text': current_line[5]})
+        filename_stem = current_line[6]
+    else:
+        return
+    file_path = f'/static/audio_files/{filename_stem}.mp3'
+    emit('play_audio_file', {'file_path': file_path})
 
 @socketio.on('save_translation')
 def handle_save_translation(data):
@@ -51,6 +58,11 @@ def handle_save_translation(data):
     with open('master.txt', 'w', encoding='utf-8') as file:
         file.writelines(all_lines)
 
+
+    # Step 3: Log the change
+    with open('translation_log.txt', 'a', encoding='utf-8') as log_file:
+        timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        log_file.write(f"{timestamp}\t{current_line[4]}\t{current_line[0]}\t{lang}\t{new_text}\n")
     emit('save_success', {'language': lang})
 
 @socketio.on('play_audio')
