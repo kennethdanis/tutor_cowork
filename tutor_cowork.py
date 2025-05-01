@@ -39,8 +39,8 @@ def index():
 def handle_request_current_state():
     emit('sync_current_state', {
         'english': current_line[0],
-        'italian': current_line[1],
-        'spanish': current_line[5]
+        'italian': '',   # clear translation box on initial load
+        'spanish': ''    # clear translation box on initial load
     })
 
 @socketio.on('show_translation')
@@ -87,7 +87,7 @@ def handle_play_audio(data):
     lang = data['language']
     filename_stem = current_line[2] if lang == 'italian' else current_line[6]
     file_path = f'/static/audio_files/{filename_stem}.mp3'
-    emit('play_audio_file', {'file_path': file_path})
+    emit('play_audio_file', {'file_path': file_path}, broadcast=True)  # ensure both users hear audio
 
 @socketio.on('next_sentence')
 def handle_next_sentence():
@@ -95,8 +95,8 @@ def handle_next_sentence():
     current_line = random.choice(lines)
     emit('new_sentence', {
         'english': current_line[0],
-        'italian': current_line[1],
-        'spanish': current_line[5]
+        'italian': '',  # clear translation box on next sentence
+        'spanish': ''   # clear translation box on next sentence
     }, broadcast=True)
 
 @socketio.on('edit_translation')
