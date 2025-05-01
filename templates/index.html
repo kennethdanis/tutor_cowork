@@ -8,7 +8,7 @@
             width: 100%;
             height: 3em; /* roughly two lines tall */
             font-size: 1em;
-            white-space: normal; /* allow wrapping (visual, even if input is single-line) */
+            white-space: normal;
         }
     </style>
 </head>
@@ -67,12 +67,20 @@
             const current = document.getElementById(`${lang}-box`).value;
             const isChanged = current.trim() !== originalText[lang].trim();
             document.getElementById(`save-${lang}`).disabled = !isChanged;
+
+            // Emit live edit event to server
+            socket.emit('edit_translation', { language: lang, text: current });
         }
 
         socket.on('update_translation', data => {
             document.getElementById(`${data.language}-box`).value = data.text;
             originalText[data.language] = data.text;
             document.getElementById(`save-${data.language}`).disabled = true;
+        });
+
+        // NEW: Listen for live updates from other user
+        socket.on('update_translation_live', data => {
+            document.getElementById(`${data.language}-box`).value = data.text;
         });
 
         socket.on('play_audio_file', data => {
