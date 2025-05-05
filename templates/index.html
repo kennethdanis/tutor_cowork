@@ -6,18 +6,29 @@
     <style>
         input[type="text"] {
             width: 90%;
-            min-height: 3em;
-            font-size: 1.2em;
-            margin-bottom: 10px;
+            min-height: 1.5em;
+            font-size: 1em;
+            margin-bottom: 8px;
+        }
+        textarea {
+            width: 90%;
+            font-size: 1em;
+            margin-bottom: 8px;
+            height: 3em;
         }
         button {
             margin: 2px;
         }
+        .button-row {
+            display: flex;
+            justify-content: space-between;
+            width: 90%;
+        }
     </style>
 </head>
 <body>
-    <h2>English:</h2>
-    <p id="english-sentence">{{ english }}</p>
+    <h3>English:</h3>
+    <p id="english-sentence">English sentence will appear here.</p>
 
     <h3>Italian Translation</h3>
     <input type="text" id="italian-box" oninput="handleEdit('italian')">
@@ -35,8 +46,14 @@
         <button onclick="playAudio('spanish')">Play Translation</button>
     </div>
 
-    <br><br>
-    <button onclick="nextSentence()">Next Sentence</button>
+    <hr>
+    <h3>Area for writing</h3>
+    <textarea id="scratchpad" placeholder="Type here..."></textarea><br>
+
+    <div class="button-row">
+        <button id="eraseButton">Erase Scratchpad</button>
+        <button onclick="nextSentence()">Next Sentence</button>
+    </div>
 
     <audio id="audio-player" style="display:none;"></audio>
 
@@ -92,17 +109,15 @@
         // Handle next sentence broadcast
         socket.on('new_sentence', data => {
             document.getElementById('english-sentence').innerText = data.english;
-            document.getElementById('italian-box').value = data.italian;
-            document.getElementById('spanish-box').value = data.spanish;
-            originalText['italian'] = data.italian;
-            originalText['spanish'] = data.spanish;
+            document.getElementById('italian-box').value = '';
+            document.getElementById('spanish-box').value = '';
+            originalText['italian'] = '';
+            originalText['spanish'] = '';
             document.getElementById('save-italian').disabled = true;
             document.getElementById('save-spanish').disabled = true;
         });
 
         // Sync full state when connecting
-        socket.emit('request_current_state');
-
         socket.on('sync_current_state', data => {
             document.getElementById('english-sentence').innerText = data.english;
             document.getElementById('italian-box').value = data.italian;
@@ -123,6 +138,20 @@
         // Confirm save success
         socket.on('save_success', data => {
             alert(`${data.language} translation saved!`);
+        });
+
+        // Scratchpad live updates
+        document.getElementById('scratchpad').addEventListener('input', function() {
+            const text = this.value;
+            socket.emit('scratchpad_update', text);
+        });
+
+        socket.on('scratchpad_update', function(text) {
+            document.getElementById('scratchpad').value = text;
+        });
+
+        document.getElementById('eraseButton').addEventListener('click', function() {
+            socket.emit('scratchpad_erase');
         });
     </script>
 </body>

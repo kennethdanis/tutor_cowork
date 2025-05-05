@@ -111,5 +111,14 @@ def handle_edit_translation(data):
     # Broadcast the change to all other clients
     emit('update_translation_live', {'language': lang, 'text': text}, broadcast=True, include_self=False)
 
+# ✅ NEW: Scratchpad handlers
+@socketio.on('scratchpad_update')
+def handle_scratchpad_update(data):
+    emit('scratchpad_update', data, broadcast=True)
+
+@socketio.on('scratchpad_erase')
+def handle_scratchpad_erase():
+    emit('scratchpad_update', '', broadcast=True)
+
 if __name__ == '__main__':
     socketio.run(app, debug=True, host='0.0.0.0', port=5000)
