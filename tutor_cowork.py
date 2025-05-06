@@ -1,7 +1,6 @@
 import eventlet
 eventlet.monkey_patch()
 
-from datetime import datetime
 from flask import Flask, render_template
 from flask_socketio import SocketIO, emit
 import random
@@ -17,7 +16,7 @@ lines = []
 # Get absolute paths
 base_dir = os.path.dirname(os.path.abspath(__file__))
 master_path = os.path.join(base_dir, 'master.txt')
-log_path = os.path.join(base_dir, 'translation_log.txt')
+log_path = os.path.join(base_dir, 'change_log.txt')
 
 # Load lines on startup
 def load_lines():
@@ -88,9 +87,10 @@ def handle_save_translation(data):
     with open(master_path, 'w', encoding='utf-8') as file:
         file.writelines(all_lines)
 
+    # Write the full current_line to change_log.txt (no timestamp)
     with open(log_path, 'a', encoding='utf-8') as log_file:
-        timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        log_file.write(f"{timestamp}\t{current_line[4]}\t{current_line[0]}\t{lang}\t{new_text}\n")
+        log_file.write('\t'.join(current_line) + '\n')
+
     emit('save_success', {'language': lang})
 
 @socketio.on('play_audio')
