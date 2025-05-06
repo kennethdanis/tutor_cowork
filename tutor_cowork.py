@@ -35,13 +35,24 @@ current_line = random.choice(lines)
 def index():
     return render_template('index.html', english=current_line[0])
 
-@socketio.on('request_current_state')
-def handle_request_current_state():
-    emit('sync_current_state', {
-        'english': current_line[0],
-        'italian': '',   # clear translation box on initial load
-        'spanish': ''    # clear translation box on initial load
-    })
+@socketio.on('restore_translation')
+def handle_restore_translation(data):
+    lang = data['language']
+    index = 1 if lang == 'italian' else 5
+
+    # Reload fresh from file
+    with open(master_path, 'r', encoding='utf-8') as file:
+        all_lines = [line.strip().split('\t') for line in file if line.strip()]
+
+    restored_text = current_line[index]
+    for fields in all_lines:
+        if fields[0] == current_line[0]:
+            restored_text = fields[index]
+            break
+
+    # Update in-memory and broadcast
+    current_line[index] = restored_text
+    emit('update_translation', {'language': lang, 'text': restored_text}, broadcast=True)
 
 @socketio.on('show_translation')
 def handle_show_translation(data):
@@ -95,8 +106,8 @@ def handle_next_sentence():
     current_line = random.choice(lines)
     emit('new_sentence', {
         'english': current_line[0],
-        'italian': '',  # clear translation box on next sentence
-        'spanish': ''   # clear translation box on next sentence
+        'italian': '',
+        'spanish': ''
     }, broadcast=True)
 
 @socketio.on('edit_translation')
@@ -104,14 +115,9 @@ def handle_edit_translation(data):
     lang = data['language']
     text = data['text']
     index = 1 if lang == 'italian' else 5
-
-    # Update the shared in-memory line
     current_line[index] = text
-
-    # Broadcast the change to all other clients
     emit('update_translation_live', {'language': lang, 'text': text}, broadcast=True, include_self=False)
 
-# ✅ NEW: Scratchpad handlers
 @socketio.on('scratchpad_update')
 def handle_scratchpad_update(data):
     emit('scratchpad_update', data, broadcast=True)

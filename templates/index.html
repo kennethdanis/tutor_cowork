@@ -33,7 +33,7 @@
     <h3>Italian Translation</h3>
     <input type="text" id="italian-box" oninput="handleEdit('italian')">
     <div>
-        <button onclick="showTranslation('italian')">Show Translation</button>
+        <button id="show-italian" onclick="showTranslation('italian')">Show Translation</button>
         <button id="save-italian" onclick="saveTranslation('italian')" disabled>Save Changes</button>
         <button onclick="playAudio('italian')">Play Translation</button>
     </div>
@@ -41,7 +41,7 @@
     <h3>Spanish Translation</h3>
     <input type="text" id="spanish-box" oninput="handleEdit('spanish')">
     <div>
-        <button onclick="showTranslation('spanish')">Show Translation</button>
+        <button id="show-spanish" onclick="showTranslation('spanish')">Show Translation</button>
         <button id="save-spanish" onclick="saveTranslation('spanish')" disabled>Save Changes</button>
         <button onclick="playAudio('spanish')">Play Translation</button>
     </div>
@@ -66,7 +66,14 @@
         };
 
         function showTranslation(lang) {
+            const button = document.getElementById(`show-${lang}`);
+            button.textContent = 'Restore Translation';
+            button.onclick = function() { restoreTranslation(lang); };
             socket.emit('show_translation', { language: lang });
+        }
+
+        function restoreTranslation(lang) {
+            socket.emit('restore_translation', { language: lang });
         }
 
         function saveTranslation(lang) {
@@ -94,19 +101,17 @@
             socket.emit('edit_translation', { language: lang, text: current });
         }
 
-        // Receive updated translation from server on show
         socket.on('update_translation', data => {
-            document.getElementById(`${data.language}-box`).value = data.text;
+            const box = document.getElementById(`${data.language}-box`);
+            box.value = data.text;
             originalText[data.language] = data.text;
             document.getElementById(`save-${data.language}`).disabled = true;
         });
 
-        // Receive live edits from the other user
         socket.on('update_translation_live', data => {
             document.getElementById(`${data.language}-box`).value = data.text;
         });
 
-        // Handle next sentence broadcast
         socket.on('new_sentence', data => {
             document.getElementById('english-sentence').innerText = data.english;
             document.getElementById('italian-box').value = '';
@@ -115,9 +120,17 @@
             originalText['spanish'] = '';
             document.getElementById('save-italian').disabled = true;
             document.getElementById('save-spanish').disabled = true;
+
+            // Reset buttons to Show Translation mode
+            const italianBtn = document.getElementById('show-italian');
+            italianBtn.textContent = 'Show Translation';
+            italianBtn.onclick = function() { showTranslation('italian'); };
+
+            const spanishBtn = document.getElementById('show-spanish');
+            spanishBtn.textContent = 'Show Translation';
+            spanishBtn.onclick = function() { showTranslation('spanish'); };
         });
 
-        // Sync full state when connecting
         socket.on('sync_current_state', data => {
             document.getElementById('english-sentence').innerText = data.english;
             document.getElementById('italian-box').value = data.italian;
@@ -128,19 +141,16 @@
             document.getElementById('save-spanish').disabled = true;
         });
 
-        // Handle audio playback
         socket.on('play_audio_file', data => {
             const audio = document.getElementById('audio-player');
             audio.src = data.file_path;
             audio.play();
         });
 
-        // Confirm save success
         socket.on('save_success', data => {
             alert(`${data.language} translation saved!`);
         });
 
-        // Scratchpad live updates
         document.getElementById('scratchpad').addEventListener('input', function() {
             const text = this.value;
             socket.emit('scratchpad_update', text);
