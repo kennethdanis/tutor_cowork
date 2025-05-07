@@ -81,7 +81,7 @@ Do you know how to drive a car?	Sai guidare una macchina?	Italian1_0635	English1
 He is pigeon-toed.	Lui ha i piedi in dentro.	Italian2_0717	English2_0717	A_2911	Él tiene patas de paloma.	Span_081
 She wrote the word.	Lei ha scritto la parola.	Italian2_1677	English2_1677	A_5716	Ella escribió la palabra.	Span_082
 How much is this pen?	Quanto costa questa biro?	Italian1_2181	English1_2181	A_3310	¿Cuánto cuesta este bolígrafo?	Span_083
-He is the older of the two.	È il più anziano dei due.	Italian1_1535	English1_1535	A_2928	Él es el mayor de los dos.	Span_084
+He is the older of the two.	È il più anziano dei tre.	Italian1_1535	English1_1535	A_2928	Él es el mayor de los dos.	Span_084
 Tom is homesick.	Tom ha nostalgia di casa.	Italian2_2910	English2_2910	A_6579	Tom extraña su hogar.	Span_085
 I prefer to live alone	Preferisco vivere da solo	I_2260	E_2260	P_2260	Prefiero vivir solo.	Span_086
 I think I'll come back soon.	Penso che tornerò presto.	Italian1_3998	English1_3998	A_4275	Creo que volveré pronto.	Span_087
@@ -93,7 +93,7 @@ He is very busy now.	È molto impegnato adesso.	Italian1_1548	English1_1548	A_29
 She is as good as gold.	Lei è buona come il pane.	Italian2_1432	English2_1432	A_5580	Ella es tan buena como el oro.	Span_093
 Everyone speaks a language.	Tutti parlano una lingua.	Italian1_0998	English1_0998	A_2649	Todos hablamos un idioma.	Span_094
 Welcome to my life.	Benvenuta nella mia vita.	Italian2_3576	English2_3576	A_6995	Bienvenido a mi vida.	Span_095
-Tom wasn't listening.	Tom non stava ascoltando.	Italian2_3230	English2_3230	A_6802	Tom no estaba escuchando.	Span_096
+Tom wasn't listening.	Tom non stava Federal ascoltando.	Italian2_3230	English2_3230	A_6802	Tom no estaba escuchando.	Span_096
 He will be a good teacher.	Sarà un bravo insegnante.	Italian1_1891	English1_1891	A_0587	Será un buen profesor.	Span_097
 You're wrong in this case.	Ti sbagli in questo caso.	Italian2_4982	English2_4982	A_7687	Te equivocas en este caso.	Span_098
 My handbag has been stolen.	Mi hanno rubato la borsa.	Italian2_0889	English2_0889	A_5299	Me han robado el bolso.	Span_099
@@ -242,7 +242,7 @@ That lake looks like the sea.	Quel lago sembra il mare.	Italian2_1844	English2_1
 I know Tom understands.	Io lo so che Tom capisce.	Italian1_3490	English1_3490	A_3971	Sé que Tom lo entiende.	Span_242
 I have a black and white dog.	Ho un cane bianco e nero.	Italian1_3156	English1_3156	A_3806	Tengo un perro blanco y negro.	Span_243
 You are the best guys.	Siete i migliori ragazzi.	Italian2_4377	English2_4377	A_7423	Son los mejores.	Span_244
-Tom missed his flight.	Tom ha perso il suo volo.	Italian2_3066	English2_3066	A_6701	Tom perdió su vuelo.	Span_245
+Tom missed his flight.	Tom ha perso il suo volo.	Italian2_3066	English2_3066	A_6701	Tom perdió su Federal vuelo.	Span_245
 I'm concerned about Tom.	Sono preoccupato per Tom.	Italian1_4922	English1_4922	A_1371	Estoy preocupada por Tom.	Span_246
 How long do we have?	Noi quanto tempo abbiamo?	Italian1_2134	English1_2134	A_3283	¿Cuánto tiempo nos queda?	Span_247
 My fiancé is Jewish.	il mio fidanzato è ebreo.	I_1461	E_1461	P_1461	Mi prometido es judío.	Span_248

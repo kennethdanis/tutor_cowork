@@ -30,20 +30,26 @@
     <h3>English:</h3>
     <p id="english-sentence">English sentence will appear here.</p>
 
-    <h3>Italian Translation</h3>
-    <input type="text" id="italian-box" oninput="handleEdit('italian')">
-    <div>
-        <button id="show-italian" onclick="showTranslation('italian')">Show Translation</button>
-        <button id="save-italian" onclick="saveTranslation('italian')" disabled>Save Changes</button>
-        <button onclick="playAudio('italian')">Play Translation</button>
-    </div>
+    <div id="translation-container">
+        <div id="italian-section">
+            <h3>Italian Translation</h3>
+            <input type="text" id="italian-box" oninput="handleEdit('italian')">
+            <div>
+                <button id="show-italian" onclick="showTranslation('italian')">Show Translation</button>
+                <button id="save-italian" onclick="saveTranslation('italian')" disabled>Save Changes</button>
+                <button onclick="playAudio('italian')">Play Translation</button>
+            </div>
+        </div>
 
-    <h3>Spanish Translation</h3>
-    <input type="text" id="spanish-box" oninput="handleEdit('spanish')">
-    <div>
-        <button id="show-spanish" onclick="showTranslation('spanish')">Show Translation</button>
-        <button id="save-spanish" onclick="saveTranslation('spanish')" disabled>Save Changes</button>
-        <button onclick="playAudio('spanish')">Play Translation</button>
+        <div id="spanish-section">
+            <h3>Spanish Translation</h3>
+            <input type="text" id="spanish-box" oninput="handleEdit('spanish')">
+            <div>
+                <button id="show-spanish" onclick="showTranslation('spanish')">Show Translation</button>
+                <button id="save-spanish" onclick="saveTranslation('spanish')" disabled>Save Changes</button>
+                <button onclick="playAudio('spanish')">Play Translation</button>
+            </div>
+        </div>
     </div>
 
     <hr>
@@ -129,6 +135,20 @@
             const spanishBtn = document.getElementById('show-spanish');
             spanishBtn.textContent = 'Show Translation';
             spanishBtn.onclick = function() { showTranslation('spanish'); };
+
+            // Randomly reorder layout per layout_order
+            const container = document.getElementById('translation-container');
+            const italianSection = document.getElementById('italian-section');
+            const spanishSection = document.getElementById('spanish-section');
+
+            while (container.firstChild) {
+                container.removeChild(container.firstChild);
+            }
+
+            data.layout_order.forEach(lang => {
+                if (lang === 'italian') container.appendChild(italianSection);
+                else if (lang === 'spanish') container.appendChild(spanishSection);
+            });
         });
 
         socket.on('sync_current_state', data => {

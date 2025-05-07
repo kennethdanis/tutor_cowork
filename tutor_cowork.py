@@ -27,31 +27,33 @@ lines = load_lines()
 if not lines:
     print("⚠ WARNING: No lines loaded from master.txt!")
 
-# Initialize shared current_line
-current_line = random.choice(lines)
+unused_lines = random.sample(lines, len(lines))
+line_index = 0
+current_line = unused_lines[line_index]
+line_index += 1
+layout_order = ['italian', 'spanish']
 
 @app.route('/')
 def index():
     return render_template('index.html', english=current_line[0])
 
-@socketio.on('restore_translation')
-def handle_restore_translation(data):
-    lang = data['language']
-    index = 1 if lang == 'italian' else 5
+@socketio.on('next_sentence')
+def handle_next_sentence():
+    global current_line, line_index, unused_lines, layout_order
+    if line_index >= len(unused_lines):
+        unused_lines = random.sample(lines, len(lines))
+        line_index = 0
+    current_line = unused_lines[line_index]
+    line_index += 1
 
-    # Reload fresh from file
-    with open(master_path, 'r', encoding='utf-8') as file:
-        all_lines = [line.strip().split('\t') for line in file if line.strip()]
+    layout_order = ['italian', 'spanish'] if random.random() > 0.5 else ['spanish', 'italian']
 
-    restored_text = current_line[index]
-    for fields in all_lines:
-        if fields[0] == current_line[0]:
-            restored_text = fields[index]
-            break
-
-    # Update in-memory and broadcast
-    current_line[index] = restored_text
-    emit('update_translation', {'language': lang, 'text': restored_text}, broadcast=True)
+    emit('new_sentence', {
+        'english': current_line[0],
+        'layout_order': layout_order,
+        'italian': '',
+        'spanish': ''
+    }, broadcast=True)
 
 @socketio.on('show_translation')
 def handle_show_translation(data):
@@ -66,6 +68,23 @@ def handle_show_translation(data):
         return
     file_path = f'/static/audio_files/{filename_stem}.mp3'
     emit('play_audio_file', {'file_path': file_path}, broadcast=True)
+
+@socketio.on('restore_translation')
+def handle_restore_translation(data):
+    lang = data['language']
+    index = 1 if lang == 'italian' else 5
+
+    with open(master_path, 'r', encoding='utf-8') as file:
+        all_lines = [line.strip().split('\t') for line in file if line.strip()]
+
+    restored_text = current_line[index]
+    for fields in all_lines:
+        if fields[0] == current_line[0]:
+            restored_text = fields[index]
+            break
+
+    current_line[index] = restored_text
+    emit('update_translation', {'language': lang, 'text': restored_text}, broadcast=True)
 
 @socketio.on('save_translation')
 def handle_save_translation(data):
@@ -87,7 +106,6 @@ def handle_save_translation(data):
     with open(master_path, 'w', encoding='utf-8') as file:
         file.writelines(all_lines)
 
-    # Write the full current_line to change_log.txt (no timestamp)
     with open(log_path, 'a', encoding='utf-8') as log_file:
         log_file.write('\t'.join(current_line) + '\n')
 
@@ -99,16 +117,6 @@ def handle_play_audio(data):
     filename_stem = current_line[2] if lang == 'italian' else current_line[6]
     file_path = f'/static/audio_files/{filename_stem}.mp3'
     emit('play_audio_file', {'file_path': file_path}, broadcast=True)
-
-@socketio.on('next_sentence')
-def handle_next_sentence():
-    global current_line
-    current_line = random.choice(lines)
-    emit('new_sentence', {
-        'english': current_line[0],
-        'italian': '',
-        'spanish': ''
-    }, broadcast=True)
 
 @socketio.on('edit_translation')
 def handle_edit_translation(data):
