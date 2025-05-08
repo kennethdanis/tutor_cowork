@@ -58,6 +58,7 @@
 
     <div class="button-row">
         <button id="eraseButton">Erase Scratchpad</button>
+        <button onclick="showBothTranslations()">Show both translations</button>
         <button onclick="nextSentence()">Next Sentence</button>
     </div>
 
@@ -100,6 +101,18 @@
             socket.emit('next_sentence');
         }
 
+        function showBothTranslations() {
+            socket.emit('show_both_translations');
+
+            const italianBtn = document.getElementById('show-italian');
+            italianBtn.textContent = 'Restore Translation';
+            italianBtn.onclick = function() { restoreTranslation('italian'); };
+
+            const spanishBtn = document.getElementById('show-spanish');
+            spanishBtn.textContent = 'Restore Translation';
+            spanishBtn.onclick = function() { restoreTranslation('spanish'); };
+        }
+
         function handleEdit(lang) {
             const current = document.getElementById(`${lang}-box`).value;
             const isChanged = current.trim() !== originalText[lang].trim();
@@ -127,7 +140,6 @@
             document.getElementById('save-italian').disabled = true;
             document.getElementById('save-spanish').disabled = true;
 
-            // Reset buttons to Show Translation mode
             const italianBtn = document.getElementById('show-italian');
             italianBtn.textContent = 'Show Translation';
             italianBtn.onclick = function() { showTranslation('italian'); };
@@ -136,7 +148,6 @@
             spanishBtn.textContent = 'Show Translation';
             spanishBtn.onclick = function() { showTranslation('spanish'); };
 
-            // Randomly reorder layout per layout_order
             const container = document.getElementById('translation-container');
             const italianSection = document.getElementById('italian-section');
             const spanishSection = document.getElementById('spanish-section');

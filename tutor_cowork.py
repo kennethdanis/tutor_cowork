@@ -69,6 +69,11 @@ def handle_show_translation(data):
     file_path = f'/static/audio_files/{filename_stem}.mp3'
     emit('play_audio_file', {'file_path': file_path}, broadcast=True)
 
+@socketio.on('show_both_translations')
+def handle_show_both_translations():
+    emit('update_translation', {'language': 'italian', 'text': current_line[1]}, broadcast=True)
+    emit('update_translation', {'language': 'spanish', 'text': current_line[5]}, broadcast=True)
+
 @socketio.on('restore_translation')
 def handle_restore_translation(data):
     lang = data['language']
