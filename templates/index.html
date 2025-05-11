@@ -43,10 +43,12 @@
             width: 100%;
             box-sizing: border-box;
             font-size: 1em;
+            font-family: inherit;
             margin-bottom: 8px;
         }
 
         textarea {
+            line-height: 1.2em;
             resize: none;
             flex-grow: 1;
         }
@@ -90,7 +92,7 @@
         </div>
 
         <div class="label">Area for writing</div>
-        <textarea id="scratchpad" placeholder="Type here..."></textarea>
+        <textarea id="scratchpad" placeholder="Type here..." spellcheck="false"></textarea>
 
         <div class="button-row">
             <button id="eraseButton">Erase Scratchpad</button>
