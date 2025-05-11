@@ -72,6 +72,8 @@
             spanish: ''
         };
 
+        let translationsVisible = false;
+
         function showTranslation(lang) {
             const button = document.getElementById(`show-${lang}`);
             button.textContent = 'Restore Translation';
@@ -101,16 +103,12 @@
             socket.emit('next_sentence');
         }
 
-        function showBothTranslations() {
-            socket.emit('show_both_translations');
-
-            const italianBtn = document.getElementById('show-italian');
-            italianBtn.textContent = 'Restore Translation';
-            italianBtn.onclick = function() { restoreTranslation('italian'); };
-
-            const spanishBtn = document.getElementById('show-spanish');
-            spanishBtn.textContent = 'Restore Translation';
-            spanishBtn.onclick = function() { restoreTranslation('spanish'); };
+        function toggleTranslations() {
+            if (translationsVisible) {
+                socket.emit('hide_both_translations');
+            } else {
+                socket.emit('show_both_translations');
+            }
         }
 
         function handleEdit(lang) {
@@ -162,37 +160,36 @@
             });
         });
 
-let translationsVisible = false;
+        socket.on('show_both_translations', () => {
+            translationsVisible = true;
+            document.getElementById('toggleTranslationsButton').textContent = 'Hide both translations';
 
-function toggleTranslations() {
-    if (translationsVisible) {
-        socket.emit('hide_both_translations');
-        document.getElementById('toggleTranslationsButton').textContent = 'Show both translations';
-    } else {
-        socket.emit('show_both_translations');
+            const italianBtn = document.getElementById('show-italian');
+            italianBtn.textContent = 'Restore Translation';
+            italianBtn.onclick = function () { restoreTranslation('italian'); };
 
-        const italianBtn = document.getElementById('show-italian');
-        italianBtn.textContent = 'Restore Translation';
-        italianBtn.onclick = function () { restoreTranslation('italian'); };
+            const spanishBtn = document.getElementById('show-spanish');
+            spanishBtn.textContent = 'Restore Translation';
+            spanishBtn.onclick = function () { restoreTranslation('spanish'); };
+        });
 
-        const spanishBtn = document.getElementById('show-spanish');
-        spanishBtn.textContent = 'Restore Translation';
-        spanishBtn.onclick = function () { restoreTranslation('spanish'); };
+        socket.on('hide_both_translations', () => {
+            translationsVisible = false;
+            document.getElementById('toggleTranslationsButton').textContent = 'Show both translations';
 
-        document.getElementById('toggleTranslationsButton').textContent = 'Hide both translations';
-    }
-    translationsVisible = !translationsVisible;
-}
+            const italianBtn = document.getElementById('show-italian');
+            italianBtn.textContent = 'Show Translation';
+            italianBtn.onclick = function () { showTranslation('italian'); };
 
+            const spanishBtn = document.getElementById('show-spanish');
+            spanishBtn.textContent = 'Show Translation';
+            spanishBtn.onclick = function () { showTranslation('spanish'); };
+        });
 
-        socket.on('sync_current_state', data => {
-            document.getElementById('english-sentence').innerText = data.english;
-            document.getElementById('italian-box').value = data.italian;
-            document.getElementById('spanish-box').value = data.spanish;
-            originalText['italian'] = data.italian;
-            originalText['spanish'] = data.spanish;
-            document.getElementById('save-italian').disabled = true;
-            document.getElementById('save-spanish').disabled = true;
+        socket.on('toggle_state_sync', data => {
+            translationsVisible = data.visible;
+            document.getElementById('toggleTranslationsButton').textContent =
+                translationsVisible ? 'Hide both translations' : 'Show both translations';
         });
 
         socket.on('play_audio_file', data => {

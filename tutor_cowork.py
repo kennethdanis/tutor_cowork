@@ -25,13 +25,14 @@ def load_lines():
 
 lines = load_lines()
 if not lines:
-    print("⚠ WARNING: No lines loaded from master.txt!")
+    print("\u26a0 WARNING: No lines loaded from master.txt!")
 
 unused_lines = random.sample(lines, len(lines))
 line_index = 0
 current_line = unused_lines[line_index]
 line_index += 1
 layout_order = ['italian', 'spanish']
+translations_visible = False
 
 @app.route('/')
 def index():
@@ -39,7 +40,7 @@ def index():
 
 @socketio.on('next_sentence')
 def handle_next_sentence():
-    global current_line, line_index, unused_lines, layout_order
+    global current_line, line_index, unused_lines, layout_order, translations_visible
     if line_index >= len(unused_lines):
         unused_lines = random.sample(lines, len(lines))
         line_index = 0
@@ -54,6 +55,9 @@ def handle_next_sentence():
         'italian': '',
         'spanish': ''
     }, broadcast=True)
+
+    emit('hide_both_translations', broadcast=True)
+    translations_visible = False
 
 @socketio.on('show_translation')
 def handle_show_translation(data):
@@ -71,6 +75,7 @@ def handle_show_translation(data):
 
 @socketio.on('show_both_translations')
 def handle_show_both_translations():
+    global translations_visible
     with open(master_path, 'r', encoding='utf-8') as file:
         all_lines = [line.strip().split('\t') for line in file if line.strip()]
 
@@ -87,12 +92,16 @@ def handle_show_both_translations():
 
     emit('update_translation', {'language': 'italian', 'text': italian_text}, broadcast=True)
     emit('update_translation', {'language': 'spanish', 'text': spanish_text}, broadcast=True)
+    translations_visible = True
+    emit('show_both_translations', broadcast=True)
 
 @socketio.on('hide_both_translations')
 def handle_hide_both_translations():
+    global translations_visible
     emit('update_translation', {'language': 'italian', 'text': ''}, broadcast=True)
     emit('update_translation', {'language': 'spanish', 'text': ''}, broadcast=True)
-
+    translations_visible = False
+    emit('hide_both_translations', broadcast=True)
 
 @socketio.on('restore_translation')
 def handle_restore_translation(data):
@@ -162,6 +171,7 @@ def handle_scratchpad_erase():
 @socketio.on('connect')
 def on_connect():
     handle_next_sentence()
+    emit('toggle_state_sync', {'visible': translations_visible})
 
 if __name__ == '__main__':
     socketio.run(app, debug=True, host='0.0.0.0', port=5000)
