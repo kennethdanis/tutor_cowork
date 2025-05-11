@@ -139,5 +139,9 @@ def handle_scratchpad_update(data):
 def handle_scratchpad_erase():
     emit('scratchpad_update', '', broadcast=True)
 
+@socketio.on('connect')
+def on_connect():
+    handle_next_sentence()
+
 if __name__ == '__main__':
     socketio.run(app, debug=True, host='0.0.0.0', port=5000)
