@@ -4,74 +4,106 @@
     <title>Tutor Cowork</title>
     <script src="https://cdn.socket.io/4.6.1/socket.io.min.js"></script>
     <style>
-        input[type="text"] {
-            width: 90%;
-            min-height: 1.5em;
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            padding: 1em;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+
+        .label {
+            font-size: 1em;
+            font-weight: bold;
+            margin-top: 0.5em;
+            margin-bottom: 0.3em;
+            text-align: left;
+        }
+
+        #english-sentence {
+            margin-top: 0.2em;
+            margin-bottom: 0.2em;
+            text-align: left;
+        }
+
+        input[type="text"], textarea {
+            width: 100%;
+            box-sizing: border-box;
             font-size: 1em;
             margin-bottom: 8px;
         }
+
         textarea {
-            width: 90%;
-            font-size: 1em;
-            margin-bottom: 8px;
-            height: 3em;
+            resize: none;
+            flex-grow: 1;
         }
-        button {
-            margin: 2px;
-        }
+
         .button-row {
             display: flex;
             justify-content: space-between;
-            width: 90%;
+            margin-top: 8px;
+        }
+
+        button {
+            margin: 2px;
         }
     </style>
 </head>
 <body>
-    <h3>English:</h3>
-    <p id="english-sentence">English sentence will appear here.</p>
+    <div class="container">
+        <div class="label">English:</div>
+        <p id="english-sentence">English sentence will appear here.</p>
 
-    <div id="translation-container">
-        <div id="italian-section">
-            <h3>Italian Translation</h3>
-            <input type="text" id="italian-box" oninput="handleEdit('italian')">
-            <div>
-                <button id="show-italian" onclick="showTranslation('italian')">Show Translation</button>
-                <button id="save-italian" onclick="saveTranslation('italian')" disabled>Save Changes</button>
-                <button onclick="playAudio('italian')">Play Translation</button>
+        <div id="translation-container">
+            <div id="italian-section">
+                <div class="label">Italian Translation</div>
+                <input type="text" id="italian-box" oninput="handleEdit('italian')">
+                <div>
+                    <button id="show-italian" onclick="showTranslation('italian')">Show Translation</button>
+                    <button id="save-italian" onclick="saveTranslation('italian')" disabled>Save Changes</button>
+                    <button onclick="playAudio('italian')">Play Translation</button>
+                </div>
+            </div>
+
+            <div id="spanish-section">
+                <div class="label">Spanish Translation</div>
+                <input type="text" id="spanish-box" oninput="handleEdit('spanish')">
+                <div>
+                    <button id="show-spanish" onclick="showTranslation('spanish')">Show Translation</button>
+                    <button id="save-spanish" onclick="saveTranslation('spanish')" disabled>Save Changes</button>
+                    <button onclick="playAudio('spanish')">Play Translation</button>
+                </div>
             </div>
         </div>
 
-        <div id="spanish-section">
-            <h3>Spanish Translation</h3>
-            <input type="text" id="spanish-box" oninput="handleEdit('spanish')">
-            <div>
-                <button id="show-spanish" onclick="showTranslation('spanish')">Show Translation</button>
-                <button id="save-spanish" onclick="saveTranslation('spanish')" disabled>Save Changes</button>
-                <button onclick="playAudio('spanish')">Play Translation</button>
-            </div>
+        <div class="label">Area for writing</div>
+        <textarea id="scratchpad" placeholder="Type here..."></textarea>
+
+        <div class="button-row">
+            <button id="eraseButton">Erase Scratchpad</button>
+            <button id="toggleTranslationsButton" onclick="toggleTranslations()">Show both translations</button>
+            <button onclick="nextSentence()">Next Sentence</button>
         </div>
-    </div>
-
-    <hr>
-    <h3>Area for writing</h3>
-    <textarea id="scratchpad" placeholder="Type here..."></textarea><br>
-
-    <div class="button-row">
-        <button id="eraseButton">Erase Scratchpad</button>
-        <button id="toggleTranslationsButton" onclick="toggleTranslations()">Show both translations</button>
-        <button onclick="nextSentence()">Next Sentence</button>
     </div>
 
     <audio id="audio-player" style="display:none;"></audio>
 
     <script>
         const socket = io();
-
-        const originalText = {
-            italian: '',
-            spanish: ''
-        };
-
+        const originalText = { italian: '', spanish: '' };
         let translationsVisible = false;
 
         function showTranslation(lang) {
