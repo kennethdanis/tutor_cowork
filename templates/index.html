@@ -58,7 +58,7 @@
 
     <div class="button-row">
         <button id="eraseButton">Erase Scratchpad</button>
-        <button onclick="showBothTranslations()">Show both translations</button>
+        <button id="toggleTranslationsButton" onclick="toggleTranslations()">Show both translations</button>
         <button onclick="nextSentence()">Next Sentence</button>
     </div>
 
@@ -161,6 +161,29 @@
                 else if (lang === 'spanish') container.appendChild(spanishSection);
             });
         });
+
+let translationsVisible = false;
+
+function toggleTranslations() {
+    if (translationsVisible) {
+        socket.emit('hide_both_translations');
+        document.getElementById('toggleTranslationsButton').textContent = 'Show both translations';
+    } else {
+        socket.emit('show_both_translations');
+
+        const italianBtn = document.getElementById('show-italian');
+        italianBtn.textContent = 'Restore Translation';
+        italianBtn.onclick = function () { restoreTranslation('italian'); };
+
+        const spanishBtn = document.getElementById('show-spanish');
+        spanishBtn.textContent = 'Restore Translation';
+        spanishBtn.onclick = function () { restoreTranslation('spanish'); };
+
+        document.getElementById('toggleTranslationsButton').textContent = 'Hide both translations';
+    }
+    translationsVisible = !translationsVisible;
+}
+
 
         socket.on('sync_current_state', data => {
             document.getElementById('english-sentence').innerText = data.english;

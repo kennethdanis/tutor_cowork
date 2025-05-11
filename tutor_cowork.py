@@ -71,8 +71,28 @@ def handle_show_translation(data):
 
 @socketio.on('show_both_translations')
 def handle_show_both_translations():
-    emit('update_translation', {'language': 'italian', 'text': current_line[1]}, broadcast=True)
-    emit('update_translation', {'language': 'spanish', 'text': current_line[5]}, broadcast=True)
+    with open(master_path, 'r', encoding='utf-8') as file:
+        all_lines = [line.strip().split('\t') for line in file if line.strip()]
+
+    italian_text = current_line[1]
+    spanish_text = current_line[5]
+    for fields in all_lines:
+        if fields[0] == current_line[0]:
+            italian_text = fields[1]
+            spanish_text = fields[5]
+            break
+
+    current_line[1] = italian_text
+    current_line[5] = spanish_text
+
+    emit('update_translation', {'language': 'italian', 'text': italian_text}, broadcast=True)
+    emit('update_translation', {'language': 'spanish', 'text': spanish_text}, broadcast=True)
+
+@socketio.on('hide_both_translations')
+def handle_hide_both_translations():
+    emit('update_translation', {'language': 'italian', 'text': ''}, broadcast=True)
+    emit('update_translation', {'language': 'spanish', 'text': ''}, broadcast=True)
+
 
 @socketio.on('restore_translation')
 def handle_restore_translation(data):
