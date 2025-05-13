@@ -91,7 +91,10 @@
             </div>
         </div>
 
-        <div class="label">Area for writing</div>
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div class="label">Area for writing</div>
+            <button onclick="saveNotes()">Save notes</button>
+        </div>
         <textarea id="scratchpad" placeholder="Type here..." spellcheck="false"></textarea>
 
         <div class="button-row">
@@ -152,6 +155,16 @@
             socket.emit('edit_translation', { language: lang, text: current });
         }
 
+        function saveNotes() {
+            const text = document.getElementById('scratchpad').value;
+            if (text.trim()) {
+                socket.emit('save_notes', text);
+                alert("Notes saved.");
+            } else {
+                alert("Scratchpad is empty. Nothing to save.");
+            }
+        }
+
         socket.on('update_translation', data => {
             const box = document.getElementById(`${data.language}-box`);
             box.value = data.text;
@@ -192,6 +205,8 @@
                 if (lang === 'italian') container.appendChild(italianSection);
                 else if (lang === 'spanish') container.appendChild(spanishSection);
             });
+
+            document.getElementById('scratchpad').focus();
         });
 
         socket.on('show_both_translations', () => {

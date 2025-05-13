@@ -168,6 +168,12 @@ def handle_scratchpad_update(data):
 def handle_scratchpad_erase():
     emit('scratchpad_update', '', broadcast=True)
 
+@socketio.on('save_notes')
+def handle_save_notes(text):
+    notes_path = os.path.join(base_dir, 'notes.txt')
+    with open(notes_path, 'a', encoding='utf-8') as notes_file:
+        notes_file.write(text.strip() + '\n\n')
+
 @socketio.on('connect')
 def on_connect():
     handle_next_sentence()
