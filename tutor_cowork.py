@@ -164,11 +164,9 @@ def handle_edit_translation(data):
 def handle_scratchpad_update(data):
     emit('scratchpad_update', data, broadcast=True, include_self=False)
 
-
 @socketio.on('scratchpad_erase')
 def handle_scratchpad_erase():
-    emit('scratchpad_update', data, broadcast=True, include_self=False)
-
+    emit('scratchpad_update', '', broadcast=True)
 
 @socketio.on('save_notes')
 def handle_save_notes(text):
