@@ -17,6 +17,7 @@ lines = []
 base_dir = os.path.dirname(os.path.abspath(__file__))
 master_path = os.path.join(base_dir, 'master.txt')
 log_path = os.path.join(base_dir, 'change_log.txt')
+dub_list_path = os.path.join(base_dir, 'dub_list.txt')
 
 # Load lines on startup
 def load_lines():
@@ -142,6 +143,12 @@ def handle_save_translation(data):
 
     with open(log_path, 'a', encoding='utf-8') as log_file:
         log_file.write('\t'.join(current_line) + '\n')
+
+    # Append to dub_list.txt
+    filename_stem = current_line[2] if lang == 'italian' else current_line[6]
+    language_label = 'Italian' if lang == 'italian' else 'Spanish'
+    with open(dub_list_path, 'a', encoding='utf-8') as dub_file:
+        dub_file.write(f"{language_label}\t{filename_stem}\t{new_text.strip()}\n")
 
     emit('save_success', {'language': lang})
 
